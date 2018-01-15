@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前端&amp;设计 | 写写代码，做做设计">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LeePeng&#39;s blog">
+<meta property="og:url" content="http://www.leepeng..top/index.html">
+<meta property="og:site_name" content="LeePeng&#39;s blog">
+<meta property="og:description" content="前端&amp;设计 | 写写代码，做做设计">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeePeng&#39;s blog">
+<meta name="twitter:description" content="前端&amp;设计 | 写写代码，做做设计">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.leepeng..top/"/>
+
+
+
+
+
+  <title>LeePeng's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LeePeng's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Quick notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2018/01/15/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeePeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head-portait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeePeng's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/15/hello-world/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-15T12:06:14+08:00">
+                2018-01-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/08/06/2017-08-06-time/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeePeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head-portait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeePeng's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/06/2017-08-06-time/" itemprop="url">倒计时效果</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-06T00:00:00+08:00">
+                2017-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="倒计时效果"><a href="#倒计时效果" class="headerlink" title="倒计时效果"></a>倒计时效果</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p>
+<p><a href="http://www.leepeng.top/example/js_time.html" target="_blank" rel="noopener">倒计时效果</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;当前时间&lt;/p&gt;</span><br><span class="line">&lt;div id=<span class="string">"time"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;p&gt;倒计时1&lt;/p&gt;</span><br><span class="line">&lt;div class=<span class="string">"dao1"</span>&gt;距离设置时间还有&lt;div id=<span class="string">"dao1"</span>&gt;&lt;/div&gt;天&lt;/div&gt;</span><br><span class="line">&lt;p&gt;倒计时2&lt;/p&gt;</span><br><span class="line">&lt;div class=<span class="string">"dao2"</span>&gt;距离设置时间2118/1/1,00:00:00还有&lt;div id=<span class="string">"dao2"</span>&gt;&lt;/div&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	</span><br><span class="line">	window.onload= <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">		showtime();</span><br><span class="line">		dao1();</span><br><span class="line">		dao2();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">function</span> formatTime(i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(i&lt;10)&#123;</span><br><span class="line">			i=<span class="string">'0'</span>+i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">return</span> i;</span><br><span class="line">	&#125;</span><br><span class="line">	//当前时间</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">showtime</span></span>()&#123;</span><br><span class="line">		<span class="built_in">let</span> myDate = new Date();</span><br><span class="line">		<span class="built_in">let</span> year = myDate.getFullYear();//年</span><br><span class="line">		<span class="built_in">let</span> month = myDate.getMonth();//月</span><br><span class="line">		<span class="built_in">let</span> date = myDate.getDate();//日</span><br><span class="line">		<span class="built_in">let</span> day = myDate.getDay();//星期</span><br><span class="line">		<span class="built_in">let</span> h = myDate.getHours();//时</span><br><span class="line">		<span class="built_in">let</span> m = myDate.getMinutes();//分</span><br><span class="line">		<span class="built_in">let</span> s = myDate.getSeconds();//秒</span><br><span class="line">			m = formatTime(m);</span><br><span class="line">			s = formatTime(s);</span><br><span class="line">		<span class="built_in">let</span> time=document.getElementById(<span class="string">"time"</span>);</span><br><span class="line">		<span class="built_in">let</span> weekday = [<span class="string">'星期日'</span>,<span class="string">'星期一'</span>,<span class="string">'星期二'</span>,<span class="string">'星期三'</span>,<span class="string">'星期四'</span>,<span class="string">'星期五'</span>,<span class="string">'星期六'</span>,<span class="string">''</span>]</span><br><span class="line">			time.innerHTML=year+<span class="string">'年'</span>+month+<span class="string">'月'</span>+date+<span class="string">'日 '</span>+weekday[day]+<span class="string">' '</span>+h+<span class="string">':'</span>+m+<span class="string">':'</span>+s;</span><br><span class="line">		setTimeout(showtime,500);</span><br><span class="line">	&#125;</span><br><span class="line">	//当前时间</span><br><span class="line">	//倒计时1</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">dao1</span></span>()&#123;</span><br><span class="line">		<span class="built_in">let</span> curtime = new Date();</span><br><span class="line">		<span class="built_in">let</span> endtime = new Date(<span class="string">"2018,1,1"</span>);</span><br><span class="line">		<span class="built_in">let</span> time = endtime.getTime() - curtime.getTime();//getTime()毫秒</span><br><span class="line">		//1000 * 60 * 60 * 24一天的秒数</span><br><span class="line">		//利用Math.ceil()对象方法，对得出的时间差进行向上取整。</span><br><span class="line">		//parseInt()取整。</span><br><span class="line">		daytime = parseInt(time/(1000 * 60 * 60 * 24))</span><br><span class="line">		<span class="keyword">if</span>(daytime &gt; 0 )&#123;</span><br><span class="line">	      document.getElementById(<span class="string">'dao1'</span>).innerHTML = daytime;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	//倒计时1</span><br><span class="line">	//倒计时2</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">dao2</span></span>()&#123;</span><br><span class="line">		<span class="built_in">let</span> nowtime = new Date();</span><br><span class="line">		<span class="built_in">let</span> endtime = new Date(<span class="string">"2118/1/1,00:00:00"</span>);</span><br><span class="line">		<span class="built_in">let</span> time = parseInt((endtime.getTime() - nowtime.getTime())/1000);//秒</span><br><span class="line">		<span class="built_in">let</span> d = parseInt(time/(24*60*60));</span><br><span class="line">		<span class="built_in">let</span> h = parseInt(time/(60*60)%24);</span><br><span class="line">		<span class="built_in">let</span> m = parseInt(time/60%60);</span><br><span class="line">		<span class="built_in">let</span> s = parseInt(time%60);</span><br><span class="line">			m = formatTime(m);</span><br><span class="line">			s = formatTime(s);</span><br><span class="line">		document.getElementById(<span class="string">'dao2'</span>).innerHTML = d+<span class="string">'天'</span>+h+<span class="string">'时'</span>+m+<span class="string">'分'</span>+s+<span class="string">'秒'</span>;</span><br><span class="line">		setTimeout(dao2,500)</span><br><span class="line">	&#125;</span><br><span class="line">	//倒计时2</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/08/05/2017-08-05-es6-lensson1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeePeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head-portait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeePeng's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/05/2017-08-05-es6-lensson1/" itemprop="url">ES6-let,const</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-05T00:00:00+08:00">
+                2017-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          es6第一课，let const
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/05/2017-08-05-es6-lensson1/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/08/05/2017-08-05-es6-set/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeePeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head-portait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeePeng's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/05/2017-08-05-es6-set/" itemprop="url">ES6-set-map</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-05T00:00:00+08:00">
+                2017-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="ES6-set-map"><a href="#ES6-set-map" class="headerlink" title="ES6-set-map"></a>ES6-set-map</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p></p><p>1、新建new Set([‘…’])</p><p></p>
+<p></p><p>2、获取个数.size</p><p></p>
+<p></p><p>3、添加add、删除delete、是否包含has、清除clear</p><p></p>
+<p></p><p>4、开发中用于去除重复数据</p><p></p>
+<p></p><p>5、keys和values都是相等的</p><p></p>
+<p></p><p>6、类似于数组没有重复的元素（唯一的）</p><br>let s=new Set([1,2,3,3]);<br>console.log(“arr:”,arr)<br>s.add(4)<br>s.delete(2)<br>console.log(“s:”,s.has(4))<br>console.log(“s:”,s.keys())<br>console.log(“s:”,s.values())<br>s.clear()<p></p>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>const map = new Map([<br>    [‘name’,’leepeng’],<br>    [‘age’,24],<br>    [‘sex’,’男’],<br>    [obj1,’sfsfdsfe’],<br>    [obj2,’lihfksdnsiu’],<br>    [[1,2,3],’haha’]<br>])<br>map.set(‘friends’,[‘ffff’,’gggg’])<br>console.log(map.size)<br>console.log(map)<br>console.log(map.get(‘name’))<br>console.log(map.delete(‘name’))<br>console.log(map.has(‘age’))<br>//map.clear();<br>console.log(map)<br>map.forEach(function (value,index) {<br>    console.log(index+’:’+value)<br>})</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/08/05/2017-08-05-html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeePeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head-portait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeePeng's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/05/2017-08-05-html/" itemprop="url">HTML-&#65279导致页面顶部空白一行</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-05T00:00:00+08:00">
+                2017-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="HTML-amp-65279导致页面顶部空白一行"><a href="#HTML-amp-65279导致页面顶部空白一行" class="headerlink" title="HTML-&amp;#65279导致页面顶部空白一行"></a>HTML-&amp;#65279导致页面顶部空白一行</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p>
+<p>静态html页面，在浏览器中测试的时候，发现其中一个html页面的顶部多出了些许空白，而另一个页面显示正常。在浏览器中进行了审查对比，发现有空白的那个页面的head标签里面的元素全部跑到了body里面，而且body中还多出了一个，当把这个东西删除之后就正常了。然后又在编辑器中，对比了一下这两个页面的源码，发现head部分完全一样，body中的代码也没有什么异常。最后通过查阅相关资料，才发现原来是编码的问题。</p><br><p>页面的编码如果是UTF-8 + BOM，会在body开头处加入一个可见的控制符，导致页面头部会出现一个空白。这种编码方式一般会在windows操作系统中出现，比如记事本编辑器，在保存一个以UTF-8编码的文件时，会在文件开始的地方插入三个不可见的字符（0xEF 0xBB 0xBF，即BOM）。它是一串隐藏的字符，用于让记事本等编辑器识别这个文件是否以UTF-8编码。对于一般的文件，这样并不会产生什么麻烦。但对于html来说，BOM是个大麻烦。因为浏览器在解析html页面时，并不会忽略BOM，所以在解析html文件时，会把BOM作为该文件开头正文的一部分，这串字符也将会被直接执行（在页面中并不显示）出来。由此造成即使页面的 top或者padding 设置为0，也无法让整个网页紧贴浏览器顶部，因为在html一开头有这3个隐藏字符！</p>
+
+
+
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/05/02/2017-05-02-pingbishuangjixuanzhongzi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeePeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head-portait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeePeng's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/02/2017-05-02-pingbishuangjixuanzhongzi/" itemprop="url">屏蔽双击选中文字的方法!</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-02T00:00:00+08:00">
+                2017-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="屏蔽双击选中文字的方法"><a href="#屏蔽双击选中文字的方法" class="headerlink" title="屏蔽双击选中文字的方法!"></a>屏蔽双击选中文字的方法!</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p>
+<p>FF用样式 ：-moz-user-select:none;</p>
+<p>FF以外的浏览器用：onselectstart=”return false”（直接加在需要作用的标签）</p>
+<p>eg:  &lt;div class=”test” onselectstart=”return false” style=”-moz-user-select:none;” &gt;你选不到我。。。（屏蔽双击选中文字的区域）&lt;/div&gt;</p>
+<p>如果你在标签里加了onselectstart=”return false” 那标签内的文字都没法选中了。。</p>
+<h3 id="css禁止双击页面选中文本"><a href="#css禁止双击页面选中文本" class="headerlink" title="css禁止双击页面选中文本"></a>css禁止双击页面选中文本</h3><p>user-select：none | text | all | element<br>默认值：text<br>适用于：除替换元素外的所有元素<br>继承性：无<br>动画性：否<br>计算值：指定值<br>取值：<br>none：文本不能被选择<br>text：可以选择文本<br>all：当所有内容作为一个整体时可以被选择。如果双击或者在上下文上点击子元素，那么被选择的部分将是以该子元素向上回溯的最高祖先元素。<br>element：可以选择文本，但选择范围受元素边界的约束</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/05/02/2017-06-26-lanshiwangjidexiaowenti/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeePeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head-portait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeePeng's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/02/2017-06-26-lanshiwangjidexiaowenti/" itemprop="url">老是忘记的小问题!</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-02T00:00:00+08:00">
+                2017-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="老是忘记的小问题-（）"><a href="#老是忘记的小问题-（）" class="headerlink" title="老是忘记的小问题!（）"></a>老是忘记的小问题!（）</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p>
+<p>1、火狐FF里INPUT标签刷新页面后 仍然保存之前输入的内容。</p>
+<p>直接在input 标签里 增加 autocomplete=”off”。火狐默认为 on。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/05/02/2017-05-02-bootstrap-addiframe-close-modal/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeePeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head-portait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeePeng's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/02/2017-05-02-bootstrap-addiframe-close-modal/" itemprop="url">bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-02T00:00:00+08:00">
+                2017-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框"><a href="#bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框" class="headerlink" title="bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框"></a>bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p>
+<p>bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框<br>window.parent.$(‘#myModal’).modal(‘hide’);</p>
+<p>eg:<br>window.self<br>功能：是对当前窗口自身的引用。它和window属性是等价的。<br>语法：window.self<br>注：window、self、window.self是等价的。</p>
+<p>window.top<br>功能：返回顶层窗口，即浏览器窗口。<br>语法：window.top<br>注：如果窗口本身就是顶层窗口，top属性返回的是对自身的引用。</p>
+<p>window.parent<br>功能：返回父窗口。<br>语法：window.parent<br>注：如果窗口本身是顶层窗口，parent属性返回的是对自身的引用。<br>在框架网页中，一般父窗口就是顶层窗口，但如果框架中还有框架，父窗口和顶层窗口就不一定相同了。</p>
+<p>判断当前窗口是否在一个框架中：</p>
+<p>&lt; script type=”text/JavaScript“ &gt;<br>var b = window.top!=window.self;<br>document.write( “当前窗口是否在一个框架中：”+b );<br>&lt; /script &gt;</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/04/24/2017-04-26-welcome-to-leepengblog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeePeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head-portait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeePeng's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/24/2017-04-26-welcome-to-leepengblog/" itemprop="url">欢迎来到李鹏的博客!</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-24T00:00:00+08:00">
+                2017-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="欢迎来到李鹏的博客"><a href="#欢迎来到李鹏的博客" class="headerlink" title="欢迎来到李鹏的博客!"></a>欢迎来到李鹏的博客!</h2><p>这是博客的第一篇，搭好了博客好像有很多话想这写出来，可以写作水平有限啊，都不知道怎么表达。</p>
+<p>写文章啊，一直都是弱点啊，希望以后可以通过写博客来提升提升吧。。。</p>
+<h4 id="关于此博客"><a href="#关于此博客" class="headerlink" title="关于此博客"></a>关于此博客</h4><p>一直以来都想自已写一个博客（前台+后台），结果完成了前台后就在学习php的路上拖。。拖。。拖。。最后也没成，还是懒啊。在此之前用过node.js，wordpress搭建博客，种种原因，最后选择了用Github + Jekyll 写博客。这个博客呢，基础的功能可以了，但还有其他的功能还没有加，慢慢的完善吧。</p>
+<p>（天知道什么时候能完善好，毕竟这个都拖了那么久。。）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head-portait.jpg"
+                alt="LeePeng" />
+            
+              <p class="site-author-name" itemprop="name">LeePeng</p>
+              <p class="site-description motion-element" itemprop="description">前端&设计 | 写写代码，做做设计</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LeePeng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
