@@ -88,7 +88,7 @@
 <meta property="og:description" content="倒计时效果 当前时间 倒计时1距离设置时间还有天倒计时2距离设置时间2118/1/1,00:00:00还有       window.onload= function () {         showtime();         dao1();         dao2();     }     function formatTime(i){         if(i 0 ){">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.leepeng..top/images/time.jpg">
-<meta property="og:updated_time" content="2018-01-19T11:38:32.867Z">
+<meta property="og:updated_time" content="2018-01-19T11:45:44.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="倒计时效果">
 <meta name="twitter:description" content="倒计时效果 当前时间 倒计时1距离设置时间还有天倒计时2距离设置时间2118/1/1,00:00:00还有       window.onload= function () {         showtime();         dao1();         dao2();     }     function formatTime(i){         if(i 0 ){">
@@ -406,7 +406,7 @@
             s = formatTime(s);
         let time=document.getElementById("time");
         let weekday = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六','']
-            time.innerHTML=year+'年'+month+'月'+date+'日 '+weekday[day]+' '+h+':'+m+':'+s;
+            time.innerHTML=year+'年'+(month+1)+'月'+date+'日 '+weekday[day]+' '+h+':'+m+':'+s;
         setTimeout(showtime,500);
     }
     //当前时间

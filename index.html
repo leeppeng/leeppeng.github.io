@@ -534,7 +534,7 @@
             s = formatTime(s);
         let time=document.getElementById("time");
         let weekday = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六','']
-            time.innerHTML=year+'年'+month+'月'+date+'日 '+weekday[day]+' '+h+':'+m+':'+s;
+            time.innerHTML=year+'年'+(month+1)+'月'+date+'日 '+weekday[day]+' '+h+':'+m+':'+s;
         setTimeout(showtime,500);
     }
     //当前时间
