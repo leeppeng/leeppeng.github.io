@@ -241,9 +241,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -470,11 +504,82 @@
 
       
         
-          
-            <h2 id="倒计时效果"><a href="#倒计时效果" class="headerlink" title="倒计时效果"></a>倒计时效果</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p>
-<p><a href="http://www.leepeng.top/example/js_time.html" target="_blank" rel="noopener">倒计时效果</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;当前时间&lt;/p&gt;</span><br><span class="line">&lt;div id=<span class="string">"time"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;p&gt;倒计时1&lt;/p&gt;</span><br><span class="line">&lt;div class=<span class="string">"dao1"</span>&gt;距离设置时间还有&lt;div id=<span class="string">"dao1"</span>&gt;&lt;/div&gt;天&lt;/div&gt;</span><br><span class="line">&lt;p&gt;倒计时2&lt;/p&gt;</span><br><span class="line">&lt;div class=<span class="string">"dao2"</span>&gt;距离设置时间2118/1/1,00:00:00还有&lt;div id=<span class="string">"dao2"</span>&gt;&lt;/div&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	</span><br><span class="line">	window.onload= <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">		showtime();</span><br><span class="line">		dao1();</span><br><span class="line">		dao2();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">function</span> formatTime(i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(i&lt;10)&#123;</span><br><span class="line">			i=<span class="string">'0'</span>+i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">return</span> i;</span><br><span class="line">	&#125;</span><br><span class="line">	//当前时间</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">showtime</span></span>()&#123;</span><br><span class="line">		<span class="built_in">let</span> myDate = new Date();</span><br><span class="line">		<span class="built_in">let</span> year = myDate.getFullYear();//年</span><br><span class="line">		<span class="built_in">let</span> month = myDate.getMonth();//月</span><br><span class="line">		<span class="built_in">let</span> date = myDate.getDate();//日</span><br><span class="line">		<span class="built_in">let</span> day = myDate.getDay();//星期</span><br><span class="line">		<span class="built_in">let</span> h = myDate.getHours();//时</span><br><span class="line">		<span class="built_in">let</span> m = myDate.getMinutes();//分</span><br><span class="line">		<span class="built_in">let</span> s = myDate.getSeconds();//秒</span><br><span class="line">			m = formatTime(m);</span><br><span class="line">			s = formatTime(s);</span><br><span class="line">		<span class="built_in">let</span> time=document.getElementById(<span class="string">"time"</span>);</span><br><span class="line">		<span class="built_in">let</span> weekday = [<span class="string">'星期日'</span>,<span class="string">'星期一'</span>,<span class="string">'星期二'</span>,<span class="string">'星期三'</span>,<span class="string">'星期四'</span>,<span class="string">'星期五'</span>,<span class="string">'星期六'</span>,<span class="string">''</span>]</span><br><span class="line">			time.innerHTML=year+<span class="string">'年'</span>+month+<span class="string">'月'</span>+date+<span class="string">'日 '</span>+weekday[day]+<span class="string">' '</span>+h+<span class="string">':'</span>+m+<span class="string">':'</span>+s;</span><br><span class="line">		setTimeout(showtime,500);</span><br><span class="line">	&#125;</span><br><span class="line">	//当前时间</span><br><span class="line">	//倒计时1</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">dao1</span></span>()&#123;</span><br><span class="line">		<span class="built_in">let</span> curtime = new Date();</span><br><span class="line">		<span class="built_in">let</span> endtime = new Date(<span class="string">"2018,1,1"</span>);</span><br><span class="line">		<span class="built_in">let</span> time = endtime.getTime() - curtime.getTime();//getTime()毫秒</span><br><span class="line">		//1000 * 60 * 60 * 24一天的秒数</span><br><span class="line">		//利用Math.ceil()对象方法，对得出的时间差进行向上取整。</span><br><span class="line">		//parseInt()取整。</span><br><span class="line">		daytime = parseInt(time/(1000 * 60 * 60 * 24))</span><br><span class="line">		<span class="keyword">if</span>(daytime &gt; 0 )&#123;</span><br><span class="line">	      document.getElementById(<span class="string">'dao1'</span>).innerHTML = daytime;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	//倒计时1</span><br><span class="line">	//倒计时2</span><br><span class="line">	<span class="keyword">function</span> <span class="function"><span class="title">dao2</span></span>()&#123;</span><br><span class="line">		<span class="built_in">let</span> nowtime = new Date();</span><br><span class="line">		<span class="built_in">let</span> endtime = new Date(<span class="string">"2118/1/1,00:00:00"</span>);</span><br><span class="line">		<span class="built_in">let</span> time = parseInt((endtime.getTime() - nowtime.getTime())/1000);//秒</span><br><span class="line">		<span class="built_in">let</span> d = parseInt(time/(24*60*60));</span><br><span class="line">		<span class="built_in">let</span> h = parseInt(time/(60*60)%24);</span><br><span class="line">		<span class="built_in">let</span> m = parseInt(time/60%60);</span><br><span class="line">		<span class="built_in">let</span> s = parseInt(time%60);</span><br><span class="line">			m = formatTime(m);</span><br><span class="line">			s = formatTime(s);</span><br><span class="line">		document.getElementById(<span class="string">'dao2'</span>).innerHTML = d+<span class="string">'天'</span>+h+<span class="string">'时'</span>+m+<span class="string">'分'</span>+s+<span class="string">'秒'</span>;</span><br><span class="line">		setTimeout(dao2,500)</span><br><span class="line">	&#125;</span><br><span class="line">	//倒计时2</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+          <h2 id="倒计时效果"><a href="#倒计时效果" class="headerlink" title="倒计时效果"></a>倒计时效果</h2><p><img src="/images/time.jpg" class="full-image"></p>
+<p></p><p>当前时间</p><p></p>
+<div id="time"></div><br><p>倒计时1</p><br><div class="dao1">距离设置时间还有<div id="dao1"></div>天</div><br><p>倒计时2</p><br><div class="dao2">距离设置时间2118/1/1,00:00:00还有<div id="dao2"></div></div>
 
-          
+<script>
+    window.onload= function () {
+        showtime();
+        dao1();
+        dao2();
+    }
+    function formatTime(i){
+        if(i<10){
+            i='0'+i;
+        }
+        return i;
+    }
+    //当前时间
+    function showtime(){
+        let myDate = new Date();
+        let year = myDate.getFullYear();//年
+        let month = myDate.getMonth();//月
+        let date = myDate.getDate();//日
+        let day = myDate.getDay();//星期
+        let h = myDate.getHours();//时
+        let m = myDate.getMinutes();//分
+        let s = myDate.getSeconds();//秒
+            m = formatTime(m);
+            s = formatTime(s);
+        let time=document.getElementById("time");
+        let weekday = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六','']
+            time.innerHTML=year+'年'+month+'月'+date+'日 '+weekday[day]+' '+h+':'+m+':'+s;
+        setTimeout(showtime,500);
+    }
+    //当前时间
+    //倒计时1
+    function dao1(){
+        let curtime = new Date();
+        let endtime = new Date("2019,1,1");
+        let time = endtime.getTime() - curtime.getTime();//getTime()毫秒
+        //1000 * 60 * 60 * 24一天的秒数
+        //利用Math.ceil()对象方法，对得出的时间差进行向上取整。
+        //parseInt()取整。
+        daytime = parseInt(time/(1000 * 60 * 60 * 24))
+        if(daytime > 0 ){
+          document.getElementById('dao1').innerHTML = daytime;
+        }
+    }
+    //倒计时1
+    //倒计时2
+    function dao2(){
+        let nowtime = new Date();
+        let endtime = new Date("2118/1/1,00:00:00");
+        let time = parseInt((endtime.getTime() - nowtime.getTime())/1000);//秒
+        let d = parseInt(time/(24*60*60));
+        let h = parseInt(time/(60*60)%24);
+        let m = parseInt(time/60%60);
+        let s = parseInt(time%60);
+            m = formatTime(m);
+            s = formatTime(s);
+        document.getElementById('dao2').innerHTML = d+'天'+h+'时'+m+'分'+s+'秒';
+        setTimeout(dao2,500)
+    }
+
+
+</script>
+
+<blockquote>
+<p>代码</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/06/2017-08-06-time/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1362,6 +1467,22 @@
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/leeppeng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/332829123" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+            </div>
+          
 
           
           
@@ -1556,6 +1677,323 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
