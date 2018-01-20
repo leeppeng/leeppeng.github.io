@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LeePeng&#39;s blog</title>
+  
+  <subtitle>Quick notes</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.leepeng..top/"/>
+  <updated>2018-01-15T10:56:43.387Z</updated>
+  <id>http://www.leepeng..top/</id>
+  
+  <author>
+    <name>LeePeng</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://www.leepeng..top/2018/01/15/hello-world/"/>
+    <id>http://www.leepeng..top/2018/01/15/hello-world/</id>
+    <published>2018-01-15T04:06:14.446Z</published>
+    <updated>2018-01-15T10:56:43.387Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p><img src="/images/about-bg.jpg" class="full-image"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></p><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>倒计时效果</title>
+    <link href="http://www.leepeng..top/2017/08/06/2017-08-06-time/"/>
+    <id>http://www.leepeng..top/2017/08/06/2017-08-06-time/</id>
+    <published>2017-08-05T16:00:00.000Z</published>
+    <updated>2018-01-19T12:09:00.708Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="倒计时效果"><a href="#倒计时效果" class="headerlink" title="倒计时效果"></a>倒计时效果</h2><p><img src="/images/time.jpg" class="full-image"></p><p>当前时间</p><p><div id="time"></div><br>倒计时1</p><p><div class="dao1">距离设置时间还有<span id="dao1"></span>天</div><br>倒计时2 </p><p><div class="dao2">距离设置时间2118/1/1,00:00:00还有<span id="dao2"></span></div></p><script>    window.onload= function () {        showtime();        dao1();        dao2();    }    function formatTime(i){        if(i<10){            i='0'+i;        }        return i;    }    //当前时间    function showtime(){        let myDate = new Date();        let year = myDate.getFullYear();//年        let month = myDate.getMonth();//月        let date = myDate.getDate();//日        let day = myDate.getDay();//星期        let h = myDate.getHours();//时        let m = myDate.getMinutes();//分        let s = myDate.getSeconds();//秒            m = formatTime(m);            s = formatTime(s);        let time=document.getElementById("time");        let weekday = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六','']            time.innerHTML=year+'年'+(month+1)+'月'+date+'日 '+weekday[day]+' '+h+':'+m+':'+s;        setTimeout(showtime,500);    }    //当前时间    //倒计时1    function dao1(){        let curtime = new Date();        let endtime = new Date("2019,1,1");        let time = endtime.getTime() - curtime.getTime();//getTime()毫秒        //1000 * 60 * 60 * 24一天的秒数        //利用Math.ceil()对象方法，对得出的时间差进行向上取整。        //parseInt()取整。        daytime = parseInt(time/(1000 * 60 * 60 * 24))        if(daytime > 0 ){          document.getElementById('dao1').innerHTML = daytime;        }    }    //倒计时1    //倒计时2    function dao2(){        let nowtime = new Date();        let endtime = new Date("2118/1/1,00:00:00");        let time = parseInt((endtime.getTime() - nowtime.getTime())/1000);//秒        let d = parseInt(time/(24*60*60));        let h = parseInt(time/(60*60)%24);        let m = parseInt(time/60%60);        let s = parseInt(time%60);            m = formatTime(m);            s = formatTime(s);        document.getElementById('dao2').innerHTML = d+'天'+h+'时'+m+'分'+s+'秒';        setTimeout(dao2,500)    }</script><blockquote><p>代码</p></blockquote><a id="more"></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;当前时间&lt;/p&gt;</span><br><span class="line">&lt;div id=<span class="string">"time"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;p&gt;倒计时1&lt;/p&gt;</span><br><span class="line">&lt;div class=<span class="string">"dao1"</span>&gt;距离设置时间还有&lt;span id=<span class="string">"dao1"</span>&gt;&lt;/span&gt;天&lt;/div&gt;</span><br><span class="line">&lt;p&gt;倒计时2&lt;/p&gt;</span><br><span class="line">&lt;div class=<span class="string">"dao2"</span>&gt;距离设置时间2118/1/1,00:00:00还有&lt;span id=<span class="string">"dao2"</span>&gt;&lt;/span&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">window.onload= <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">showtime();</span><br><span class="line">dao1();</span><br><span class="line">dao2();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> formatTime(i)&#123;</span><br><span class="line"><span class="keyword">if</span>(i&lt;10)&#123;</span><br><span class="line">i=<span class="string">'0'</span>+i;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> i;</span><br><span class="line">&#125;</span><br><span class="line">//当前时间</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">showtime</span></span>()&#123;</span><br><span class="line"><span class="built_in">let</span> myDate = new Date();</span><br><span class="line"><span class="built_in">let</span> year = myDate.getFullYear();//年</span><br><span class="line"><span class="built_in">let</span> month = myDate.getMonth();//月</span><br><span class="line"><span class="built_in">let</span> date = myDate.getDate();//日</span><br><span class="line"><span class="built_in">let</span> day = myDate.getDay();//星期</span><br><span class="line"><span class="built_in">let</span> h = myDate.getHours();//时</span><br><span class="line"><span class="built_in">let</span> m = myDate.getMinutes();//分</span><br><span class="line"><span class="built_in">let</span> s = myDate.getSeconds();//秒</span><br><span class="line">m = formatTime(m);</span><br><span class="line">s = formatTime(s);</span><br><span class="line"><span class="built_in">let</span> time=document.getElementById(<span class="string">"time"</span>);</span><br><span class="line"><span class="built_in">let</span> weekday = [<span class="string">'星期日'</span>,<span class="string">'星期一'</span>,<span class="string">'星期二'</span>,<span class="string">'星期三'</span>,<span class="string">'星期四'</span>,<span class="string">'星期五'</span>,<span class="string">'星期六'</span>,<span class="string">''</span>]</span><br><span class="line">time.innerHTML=year+<span class="string">'年'</span>+month+<span class="string">'月'</span>+date+<span class="string">'日 '</span>+weekday[day]+<span class="string">' '</span>+h+<span class="string">':'</span>+m+<span class="string">':'</span>+s;</span><br><span class="line">setTimeout(showtime,500);</span><br><span class="line">&#125;</span><br><span class="line">//当前时间</span><br><span class="line">//倒计时1</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">dao1</span></span>()&#123;</span><br><span class="line"><span class="built_in">let</span> curtime = new Date();</span><br><span class="line"><span class="built_in">let</span> endtime = new Date(<span class="string">"2018,1,1"</span>);</span><br><span class="line"><span class="built_in">let</span> time = endtime.getTime() - curtime.getTime();//getTime()毫秒</span><br><span class="line">//1000 * 60 * 60 * 24一天的秒数</span><br><span class="line">//利用Math.ceil()对象方法，对得出的时间差进行向上取整。</span><br><span class="line">//parseInt()取整。</span><br><span class="line">daytime = parseInt(time/(1000 * 60 * 60 * 24))</span><br><span class="line"><span class="keyword">if</span>(daytime &gt; 0 )&#123;</span><br><span class="line">      document.getElementById(<span class="string">'dao1'</span>).innerHTML = daytime;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">//倒计时1</span><br><span class="line">//倒计时2</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">dao2</span></span>()&#123;</span><br><span class="line"><span class="built_in">let</span> nowtime = new Date();</span><br><span class="line"><span class="built_in">let</span> endtime = new Date(<span class="string">"2118/1/1,00:00:00"</span>);</span><br><span class="line"><span class="built_in">let</span> time = parseInt((endtime.getTime() - nowtime.getTime())/1000);//秒</span><br><span class="line"><span class="built_in">let</span> d = parseInt(time/(24*60*60));</span><br><span class="line"><span class="built_in">let</span> h = parseInt(time/(60*60)%24);</span><br><span class="line"><span class="built_in">let</span> m = parseInt(time/60%60);</span><br><span class="line"><span class="built_in">let</span> s = parseInt(time%60);</span><br><span class="line">m = formatTime(m);</span><br><span class="line">s = formatTime(s);</span><br><span class="line">document.getElementById(<span class="string">'dao2'</span>).innerHTML = d+<span class="string">'天'</span>+h+<span class="string">'时'</span>+m+<span class="string">'分'</span>+s+<span class="string">'秒'</span>;</span><br><span class="line">setTimeout(dao2,500)</span><br><span class="line">&#125;</span><br><span class="line">//倒计时2</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;倒计时效果&quot;&gt;&lt;a href=&quot;#倒计时效果&quot; class=&quot;headerlink&quot; title=&quot;倒计时效果&quot;&gt;&lt;/a&gt;倒计时效果&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/time.jpg&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;当前时间&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;time&quot;&gt;&lt;/div&gt;&lt;br&gt;倒计时1&lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;dao1&quot;&gt;距离设置时间还有&lt;span id=&quot;dao1&quot;&gt;&lt;/span&gt;天&lt;/div&gt;&lt;br&gt;倒计时2 &lt;/p&gt;
+&lt;p&gt;&lt;div class=&quot;dao2&quot;&gt;距离设置时间2118/1/1,00:00:00还有&lt;span id=&quot;dao2&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;script&gt;
+    window.onload= function () {
+        showtime();
+        dao1();
+        dao2();
+    }
+    function formatTime(i){
+        if(i&lt;10){
+            i=&#39;0&#39;+i;
+        }
+        return i;
+    }
+    //当前时间
+    function showtime(){
+        let myDate = new Date();
+        let year = myDate.getFullYear();//年
+        let month = myDate.getMonth();//月
+        let date = myDate.getDate();//日
+        let day = myDate.getDay();//星期
+        let h = myDate.getHours();//时
+        let m = myDate.getMinutes();//分
+        let s = myDate.getSeconds();//秒
+            m = formatTime(m);
+            s = formatTime(s);
+        let time=document.getElementById(&quot;time&quot;);
+        let weekday = [&#39;星期日&#39;,&#39;星期一&#39;,&#39;星期二&#39;,&#39;星期三&#39;,&#39;星期四&#39;,&#39;星期五&#39;,&#39;星期六&#39;,&#39;&#39;]
+            time.innerHTML=year+&#39;年&#39;+(month+1)+&#39;月&#39;+date+&#39;日 &#39;+weekday[day]+&#39; &#39;+h+&#39;:&#39;+m+&#39;:&#39;+s;
+        setTimeout(showtime,500);
+    }
+    //当前时间
+    //倒计时1
+    function dao1(){
+        let curtime = new Date();
+        let endtime = new Date(&quot;2019,1,1&quot;);
+        let time = endtime.getTime() - curtime.getTime();//getTime()毫秒
+        //1000 * 60 * 60 * 24一天的秒数
+        //利用Math.ceil()对象方法，对得出的时间差进行向上取整。
+        //parseInt()取整。
+        daytime = parseInt(time/(1000 * 60 * 60 * 24))
+        if(daytime &gt; 0 ){
+          document.getElementById(&#39;dao1&#39;).innerHTML = daytime;
+        }
+    }
+    //倒计时1
+    //倒计时2
+    function dao2(){
+        let nowtime = new Date();
+        let endtime = new Date(&quot;2118/1/1,00:00:00&quot;);
+        let time = parseInt((endtime.getTime() - nowtime.getTime())/1000);//秒
+        let d = parseInt(time/(24*60*60));
+        let h = parseInt(time/(60*60)%24);
+        let m = parseInt(time/60%60);
+        let s = parseInt(time%60);
+            m = formatTime(m);
+            s = formatTime(s);
+        document.getElementById(&#39;dao2&#39;).innerHTML = d+&#39;天&#39;+h+&#39;时&#39;+m+&#39;分&#39;+s+&#39;秒&#39;;
+        setTimeout(dao2,500)
+    }
+
+
+&lt;/script&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;代码&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://www.leepeng..top/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6-set-map</title>
+    <link href="http://www.leepeng..top/2017/08/05/2017-08-05-es6-set/"/>
+    <id>http://www.leepeng..top/2017/08/05/2017-08-05-es6-set/</id>
+    <published>2017-08-04T16:00:00.000Z</published>
+    <updated>2017-12-27T04:34:04.069Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ES6-set-map"><a href="#ES6-set-map" class="headerlink" title="ES6-set-map"></a>ES6-set-map</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p><h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p></p><p>1、新建new Set([‘…’])</p><p></p><p></p><p>2、获取个数.size</p><p></p><p></p><p>3、添加add、删除delete、是否包含has、清除clear</p><p></p><p></p><p>4、开发中用于去除重复数据</p><p></p><p></p><p>5、keys和values都是相等的</p><p></p><p></p><p>6、类似于数组没有重复的元素（唯一的）</p><br>let s=new Set([1,2,3,3]);<br>console.log(“arr:”,arr)<br>s.add(4)<br>s.delete(2)<br>console.log(“s:”,s.has(4))<br>console.log(“s:”,s.keys())<br>console.log(“s:”,s.values())<br>s.clear()<p></p><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>const map = new Map([<br>    [‘name’,’leepeng’],<br>    [‘age’,24],<br>    [‘sex’,’男’],<br>    [obj1,’sfsfdsfe’],<br>    [obj2,’lihfksdnsiu’],<br>    [[1,2,3],’haha’]<br>])<br>map.set(‘friends’,[‘ffff’,’gggg’])<br>console.log(map.size)<br>console.log(map)<br>console.log(map.get(‘name’))<br>console.log(map.delete(‘name’))<br>console.log(map.has(‘age’))<br>//map.clear();<br>console.log(map)<br>map.forEach(function (value,index) {<br>    console.log(index+’:’+value)<br>})</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;ES6-set-map&quot;&gt;&lt;a href=&quot;#ES6-set-map&quot; class=&quot;headerlink&quot; title=&quot;ES6-set-map&quot;&gt;&lt;/a&gt;ES6-set-map&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://timgsa.baidu.com
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://www.leepeng..top/tags/js/"/>
+    
+      <category term="es6" scheme="http://www.leepeng..top/tags/es6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML-&amp;#65279导致页面顶部空白一行</title>
+    <link href="http://www.leepeng..top/2017/08/05/2017-08-05-html/"/>
+    <id>http://www.leepeng..top/2017/08/05/2017-08-05-html/</id>
+    <published>2017-08-04T16:00:00.000Z</published>
+    <updated>2017-12-21T04:37:25.180Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="HTML-amp-65279导致页面顶部空白一行"><a href="#HTML-amp-65279导致页面顶部空白一行" class="headerlink" title="HTML-&amp;#65279导致页面顶部空白一行"></a>HTML-&amp;#65279导致页面顶部空白一行</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p><p>静态html页面，在浏览器中测试的时候，发现其中一个html页面的顶部多出了些许空白，而另一个页面显示正常。在浏览器中进行了审查对比，发现有空白的那个页面的head标签里面的元素全部跑到了body里面，而且body中还多出了一个，当把这个东西删除之后就正常了。然后又在编辑器中，对比了一下这两个页面的源码，发现head部分完全一样，body中的代码也没有什么异常。最后通过查阅相关资料，才发现原来是编码的问题。</p><br><p>页面的编码如果是UTF-8 + BOM，会在body开头处加入一个可见的控制符，导致页面头部会出现一个空白。这种编码方式一般会在windows操作系统中出现，比如记事本编辑器，在保存一个以UTF-8编码的文件时，会在文件开始的地方插入三个不可见的字符（0xEF 0xBB 0xBF，即BOM）。它是一串隐藏的字符，用于让记事本等编辑器识别这个文件是否以UTF-8编码。对于一般的文件，这样并不会产生什么麻烦。但对于html来说，BOM是个大麻烦。因为浏览器在解析html页面时，并不会忽略BOM，所以在解析html文件时，会把BOM作为该文件开头正文的一部分，这串字符也将会被直接执行（在页面中并不显示）出来。由此造成即使页面的 top或者padding 设置为0，也无法让整个网页紧贴浏览器顶部，因为在html一开头有这3个隐藏字符！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;HTML-amp-65279导致页面顶部空白一行&quot;&gt;&lt;a href=&quot;#HTML-amp-65279导致页面顶部空白一行&quot; class=&quot;headerlink&quot; title=&quot;HTML-&amp;amp;#65279导致页面顶部空白一行&quot;&gt;&lt;/a&gt;HTML-&amp;amp;#6
+      
+    
+    </summary>
+    
+    
+      <category term="html" scheme="http://www.leepeng..top/tags/html/"/>
+    
+      <category term="小问题" scheme="http://www.leepeng..top/tags/%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6-let,const</title>
+    <link href="http://www.leepeng..top/2017/08/05/2017-08-05-es6-lensson1/"/>
+    <id>http://www.leepeng..top/2017/08/05/2017-08-05-es6-lensson1/</id>
+    <published>2017-08-04T16:00:00.000Z</published>
+    <updated>2018-01-19T11:30:17.572Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ES6第一课，let-const"><a href="#ES6第一课，let-const" class="headerlink" title="ES6第一课，let const"></a>ES6第一课，let const</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p><h3 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h3><p>1、let命令， 用来声明变量。 它的用法类似于var， 但是所声明的变量， 只在let命令所在的代码块内有效。</p><br><p>2、变量一定要在声明后使用， 否则报错。</p><br><p>3、使用let命令声明变量之前， 该变量都是不可用的。</p><br><p>4、变量x使用let命令声明， 所以在声明之前， 都属于x的“死区”， 只要用到该变量就会报错。 因此， typeof运行时就会抛出一个ReferenceError。</p><br><p>5、let不允许在相同作用域内， 重复声明同一个变量。</p><br>eg:<br>{<br>    let a = 10;<br>    var b = 1;<br>}<br>console.log(a) // ReferenceError: a is not defined.<br>console.log(b) // 1<br><br><p>for循环的计数器，很适合使用let</p><p>eg:</p><p>for(let i =0;i&lt; arr.length;i++ ){}</p><p>console.log(i) // ReferenceError: a is not defined.</p><h3 id="const-命令"><a href="#const-命令" class="headerlink" title="const 命令"></a>const 命令</h3><p>1、const声明一个只读的常量。 一旦声明， 常量的值就不能改变。（ eg 1 ）</p><br><p>2、const声明的变量不得改变值， 这意味着， const一旦声明变量， 就必须立即初始化， 不能留到以后赋值。</p><br><p>3、const的作用域与let命令相同： 只在声明所在的块级作用域内有效。</p><br><p>4、const命令声明的常量也是不提升， 同样存在暂时性死区， 只能在声明的位置后面使用。</p><br>eg 1:<br>const PI = 3.1415;<br>PI // 3.1415<br>PI = 3;<br>// TypeError: Assignment to constant variable.<br><br><p>对于复合类型的变量， 变量名不指向数据， 而是指向数据所在的地址。const命令只是保证变量名指向的地址不变， 并不保证该地址的数据不变， 所以将一个对象声明为常量必须非常小心。</p><br>const foo = {};<br>foo.prop = 123;<br>foo.prop<br>// 123<br><p>foo = {}; // TypeError: “foo” is read-only</p><br><p>上面代码中， 常量foo储存的是一个地址， 这个地址指向一个对象。 不可变的只是这个地址， 即不能把foo指向另一个地址， 但对象本身是可变的， 所以依然可以为其添加新属性。</p>]]></content>
+    
+    <summary type="html">
+    
+      es6第一课，let const
+    
+    </summary>
+    
+      <category term="js" scheme="http://www.leepeng..top/categories/js/"/>
+    
+    
+      <category term="js" scheme="http://www.leepeng..top/tags/js/"/>
+    
+      <category term="es6" scheme="http://www.leepeng..top/tags/es6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框</title>
+    <link href="http://www.leepeng..top/2017/05/02/2017-05-02-bootstrap-addiframe-close-modal/"/>
+    <id>http://www.leepeng..top/2017/05/02/2017-05-02-bootstrap-addiframe-close-modal/</id>
+    <published>2017-05-01T16:00:00.000Z</published>
+    <updated>2017-10-03T13:19:10.074Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框"><a href="#bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框" class="headerlink" title="bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框"></a>bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p><p>bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框<br>window.parent.$(‘#myModal’).modal(‘hide’);</p><p>eg:<br>window.self<br>功能：是对当前窗口自身的引用。它和window属性是等价的。<br>语法：window.self<br>注：window、self、window.self是等价的。</p><p>window.top<br>功能：返回顶层窗口，即浏览器窗口。<br>语法：window.top<br>注：如果窗口本身就是顶层窗口，top属性返回的是对自身的引用。</p><p>window.parent<br>功能：返回父窗口。<br>语法：window.parent<br>注：如果窗口本身是顶层窗口，parent属性返回的是对自身的引用。<br>在框架网页中，一般父窗口就是顶层窗口，但如果框架中还有框架，父窗口和顶层窗口就不一定相同了。</p><p>判断当前窗口是否在一个框架中：</p><p>&lt; script type=”text/JavaScript“ &gt;<br>var b = window.top!=window.self;<br>document.write( “当前窗口是否在一个框架中：”+b );<br>&lt; /script &gt;</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框&quot;&gt;&lt;a href=&quot;#bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框&quot; class=&quot;headerlink&quot; tit
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://www.leepeng..top/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>老是忘记的小问题!</title>
+    <link href="http://www.leepeng..top/2017/05/02/2017-06-26-lanshiwangjidexiaowenti/"/>
+    <id>http://www.leepeng..top/2017/05/02/2017-06-26-lanshiwangjidexiaowenti/</id>
+    <published>2017-05-01T16:00:00.000Z</published>
+    <updated>2017-10-03T13:19:10.077Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="老是忘记的小问题-（）"><a href="#老是忘记的小问题-（）" class="headerlink" title="老是忘记的小问题!（）"></a>老是忘记的小问题!（）</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p><p>1、火狐FF里INPUT标签刷新页面后 仍然保存之前输入的内容。</p><p>直接在input 标签里 增加 autocomplete=”off”。火狐默认为 on。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;老是忘记的小问题-（）&quot;&gt;&lt;a href=&quot;#老是忘记的小问题-（）&quot; class=&quot;headerlink&quot; title=&quot;老是忘记的小问题!（）&quot;&gt;&lt;/a&gt;老是忘记的小问题!（）&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://timgsa.baidu.com
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://www.leepeng..top/tags/js/"/>
+    
+      <category term="css" scheme="http://www.leepeng..top/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>屏蔽双击选中文字的方法!</title>
+    <link href="http://www.leepeng..top/2017/05/02/2017-05-02-pingbishuangjixuanzhongzi/"/>
+    <id>http://www.leepeng..top/2017/05/02/2017-05-02-pingbishuangjixuanzhongzi/</id>
+    <published>2017-05-01T16:00:00.000Z</published>
+    <updated>2018-01-13T06:56:50.256Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="屏蔽双击选中文字的方法"><a href="#屏蔽双击选中文字的方法" class="headerlink" title="屏蔽双击选中文字的方法!"></a>屏蔽双击选中文字的方法!</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p><p>FF用样式 ：-moz-user-select:none;</p><p>FF以外的浏览器用：onselectstart=”return false”（直接加在需要作用的标签）</p><p>eg:  &lt;div class=”test” onselectstart=”return false” style=”-moz-user-select:none;” &gt;你选不到我。。。（屏蔽双击选中文字的区域）&lt;/div&gt;</p><p>如果你在标签里加了onselectstart=”return false” 那标签内的文字都没法选中了。。</p><h3 id="css禁止双击页面选中文本"><a href="#css禁止双击页面选中文本" class="headerlink" title="css禁止双击页面选中文本"></a>css禁止双击页面选中文本</h3><p>user-select：none | text | all | element<br>默认值：text<br>适用于：除替换元素外的所有元素<br>继承性：无<br>动画性：否<br>计算值：指定值<br>取值：<br>none：文本不能被选择<br>text：可以选择文本<br>all：当所有内容作为一个整体时可以被选择。如果双击或者在上下文上点击子元素，那么被选择的部分将是以该子元素向上回溯的最高祖先元素。<br>element：可以选择文本，但选择范围受元素边界的约束</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;屏蔽双击选中文字的方法&quot;&gt;&lt;a href=&quot;#屏蔽双击选中文字的方法&quot; class=&quot;headerlink&quot; title=&quot;屏蔽双击选中文字的方法!&quot;&gt;&lt;/a&gt;屏蔽双击选中文字的方法!&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://timgsa.baidu.c
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://www.leepeng..top/tags/js/"/>
+    
+      <category term="css" scheme="http://www.leepeng..top/tags/css/"/>
+    
+  </entry>
+  
+</feed>
