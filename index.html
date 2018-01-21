@@ -559,17 +559,15 @@
 
       
         
-          
-            <h2 id="ES6-set-map"><a href="#ES6-set-map" class="headerlink" title="ES6-set-map"></a>ES6-set-map</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p>
-<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p></p><p>1、新建new Set([‘…’])</p><p></p>
-<p></p><p>2、获取个数.size</p><p></p>
-<p></p><p>3、添加add、删除delete、是否包含has、清除clear</p><p></p>
-<p></p><p>4、开发中用于去除重复数据</p><p></p>
-<p></p><p>5、keys和values都是相等的</p><p></p>
-<p></p><p>6、类似于数组没有重复的元素（唯一的）</p><br>let s=new Set([1,2,3,3]);<br>console.log(“arr:”,arr)<br>s.add(4)<br>s.delete(2)<br>console.log(“s:”,s.has(4))<br>console.log(“s:”,s.keys())<br>console.log(“s:”,s.values())<br>s.clear()<p></p>
-<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>const map = new Map([<br>    [‘name’,’leepeng’],<br>    [‘age’,24],<br>    [‘sex’,’男’],<br>    [obj1,’sfsfdsfe’],<br>    [obj2,’lihfksdnsiu’],<br>    [[1,2,3],’haha’]<br>])<br>map.set(‘friends’,[‘ffff’,’gggg’])<br>console.log(map.size)<br>console.log(map)<br>console.log(map.get(‘name’))<br>console.log(map.delete(‘name’))<br>console.log(map.has(‘age’))<br>//map.clear();<br>console.log(map)<br>map.forEach(function (value,index) {<br>    console.log(index+’:’+value)<br>})</p>
-
-          
+          <h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。开发中用于去除重复数据<br>Set 本身是一个构造函数，用来生成 Set 数据结构。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const s = new Set();</span><br><span class="line">[2, 3, 5, 4, 5, 2, 2].forEach(x =&gt; s.add(x));</span><br><span class="line">for (let i of s) &#123;</span><br><span class="line">  console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">// 2 3 5 4</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/05/2017-08-05-es6-set/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
