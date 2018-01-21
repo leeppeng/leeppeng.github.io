@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/08/06/2017-08-06-time/">
+    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/08/06/countdown/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LeePeng">
@@ -315,7 +315,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/06/2017-08-06-time/" itemprop="url">倒计时效果</a></h1>
+                <a class="post-title-link" href="/2017/08/06/countdown/" itemprop="url">倒计时效果</a></h1>
         
 
         <div class="post-meta">
@@ -366,11 +366,11 @@
 
       
         
-          <h2 id="倒计时效果"><a href="#倒计时效果" class="headerlink" title="倒计时效果"></a>倒计时效果</h2><p><img src="/images/time.jpg" class="full-image"></p>
+          <p><img src="/images/time.jpg" class="full-image"></p>
 <p>当前时间</p>
 <p><div id="time"></div><br>倒计时1</p>
 <p><div class="dao1">距离设置时间还有<span id="dao1"></span>天</div><br>倒计时2 </p>
-<p><div class="dao2">距离设置时间2118/1/1,00:00:00还有<span id="dao2"></span></div></p>
+<p><div class="dao2">距离设置时间2019/1/1,00:00:00还有<span id="dao2"></span></div></p>
 <script>
     window.onload= function () {
         showtime();
@@ -418,7 +418,7 @@
     //倒计时2
     function dao2(){
         let nowtime = new Date();
-        let endtime = new Date("2118/1/1,00:00:00");
+        let endtime = new Date("2019/1/1,00:00:00");
         let time = parseInt((endtime.getTime() - nowtime.getTime())/1000);//秒
         let d = parseInt(time/(24*60*60));
         let h = parseInt(time/(60*60)%24);
@@ -438,7 +438,7 @@
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/06/2017-08-06-time/#more" rel="contents">
+            <a class="btn" href="/2017/08/06/countdown/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -741,7 +741,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/08/05/2017-08-05-es6-lensson1/">
+    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/05/04/es6-lensson1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LeePeng">
@@ -760,7 +760,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/05/2017-08-05-es6-lensson1/" itemprop="url">ES6-let,const</a></h1>
+                <a class="post-title-link" href="/2017/05/04/es6-lensson1/" itemprop="url">ES6-let,const</a></h1>
         
 
         <div class="post-meta">
@@ -772,8 +772,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-05T00:00:00+08:00">
-                2017-08-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-04T00:00:00+08:00">
+                2017-05-04
               </time>
             
 
@@ -782,28 +782,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -833,10 +811,10 @@
 
       
         
-          es6第一课，let const
+          <h3 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h3><p>1、let命令， 用来声明变量。 它的用法类似于var， 但是所声明的变量， 只在let命令所在的代码块内有效。<br>2、变量一定要在声明后使用， 否则报错。<br>3、使用let命令声明变量之前， 该变量都是不可用的。<br>4、变量x使用let命令声明， 所以在声明之前， 都属于x的“死区”， 只要用到该变量就会报错。 因此， typeof运行时就会抛出一个ReferenceError。<br>5、let不允许在相同作用域内， 重复声明同一个变量。<br>eg:<br>{<br>    let a = 10;<br>    var b = 1;<br>}<br>console.log(a) // ReferenceError: a is not defined.<br>console.log(b) // 1<br>for循环的计数器，很适合使用let<br>eg:<br>for(let i =0;i&lt; arr.length;i++ ){}<br>console.log(i) // ReferenceError: a is not defined.<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/05/2017-08-05-es6-lensson1/">
+            <a class="btn" href="/2017/05/04/es6-lensson1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
