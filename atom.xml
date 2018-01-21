@@ -180,54 +180,6 @@
   </entry>
   
   <entry>
-    <title>bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框</title>
-    <link href="http://www.leepeng..top/2017/05/02/2017-05-02-bootstrap-addiframe-close-modal/"/>
-    <id>http://www.leepeng..top/2017/05/02/2017-05-02-bootstrap-addiframe-close-modal/</id>
-    <published>2017-05-01T16:00:00.000Z</published>
-    <updated>2017-10-03T13:19:10.074Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框"><a href="#bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框" class="headerlink" title="bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框"></a>bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p><p>bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框<br>window.parent.$(‘#myModal’).modal(‘hide’);</p><p>eg:<br>window.self<br>功能：是对当前窗口自身的引用。它和window属性是等价的。<br>语法：window.self<br>注：window、self、window.self是等价的。</p><p>window.top<br>功能：返回顶层窗口，即浏览器窗口。<br>语法：window.top<br>注：如果窗口本身就是顶层窗口，top属性返回的是对自身的引用。</p><p>window.parent<br>功能：返回父窗口。<br>语法：window.parent<br>注：如果窗口本身是顶层窗口，parent属性返回的是对自身的引用。<br>在框架网页中，一般父窗口就是顶层窗口，但如果框架中还有框架，父窗口和顶层窗口就不一定相同了。</p><p>判断当前窗口是否在一个框架中：</p><p>&lt; script type=”text/JavaScript“ &gt;<br>var b = window.top!=window.self;<br>document.write( “当前窗口是否在一个框架中：”+b );<br>&lt; /script &gt;</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框&quot;&gt;&lt;a href=&quot;#bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框&quot; class=&quot;headerlink&quot; tit
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://www.leepeng..top/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>老是忘记的小问题!</title>
-    <link href="http://www.leepeng..top/2017/05/02/2017-06-26-lanshiwangjidexiaowenti/"/>
-    <id>http://www.leepeng..top/2017/05/02/2017-06-26-lanshiwangjidexiaowenti/</id>
-    <published>2017-05-01T16:00:00.000Z</published>
-    <updated>2017-10-03T13:19:10.077Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="老是忘记的小问题-（）"><a href="#老是忘记的小问题-（）" class="headerlink" title="老是忘记的小问题!（）"></a>老是忘记的小问题!（）</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493726791787&amp;di=f558d6e07653574fbd96c1c09fc2ef1e&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.kuqin.com%2Fupimg%2Fallimg%2F110917%2F2314255128-0.jpg" alt="Alt text"></p><p>1、火狐FF里INPUT标签刷新页面后 仍然保存之前输入的内容。</p><p>直接在input 标签里 增加 autocomplete=”off”。火狐默认为 on。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;老是忘记的小问题-（）&quot;&gt;&lt;a href=&quot;#老是忘记的小问题-（）&quot; class=&quot;headerlink&quot; title=&quot;老是忘记的小问题!（）&quot;&gt;&lt;/a&gt;老是忘记的小问题!（）&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://timgsa.baidu.com
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://www.leepeng..top/tags/js/"/>
-    
-      <category term="css" scheme="http://www.leepeng..top/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
     <title>屏蔽双击选中文字的方法!</title>
     <link href="http://www.leepeng..top/2017/05/02/pingbishuangjixuanzhongzi/"/>
     <id>http://www.leepeng..top/2017/05/02/pingbishuangjixuanzhongzi/</id>
@@ -251,6 +203,52 @@
       <category term="js" scheme="http://www.leepeng..top/tags/js/"/>
     
       <category term="css" scheme="http://www.leepeng..top/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框</title>
+    <link href="http://www.leepeng..top/2017/05/02/bootstrap-addiframe-close-modal/"/>
+    <id>http://www.leepeng..top/2017/05/02/bootstrap-addiframe-close-modal/</id>
+    <published>2017-05-01T16:00:00.000Z</published>
+    <updated>2018-01-21T10:08:36.673Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/bootstrap.jpg" class="full-image"></p><p>bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框<br>window.parent.$(‘#myModal’).modal(‘hide’);<br><a id="more"></a><br>eg:<br>window.self<br>功能：是对当前窗口自身的引用。它和window属性是等价的。<br>语法：window.self<br>注：window、self、window.self是等价的。</p><p>window.top<br>功能：返回顶层窗口，即浏览器窗口。<br>语法：window.top<br>注：如果窗口本身就是顶层窗口，top属性返回的是对自身的引用。</p><p>window.parent<br>功能：返回父窗口。<br>语法：window.parent<br>注：如果窗口本身是顶层窗口，parent属性返回的是对自身的引用。<br>在框架网页中，一般父窗口就是顶层窗口，但如果框架中还有框架，父窗口和顶层窗口就不一定相同了。</p><p>判断当前窗口是否在一个框架中：</p><p>&lt; script type=”text/JavaScript” &gt;<br>var b = window.top!=window.self;<br>document.write( “当前窗口是否在一个框架中：”+b );<br>&lt; /script &gt;</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/bootstrap.jpg&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框&lt;br&gt;window.parent.$(‘#myModal’).modal(‘hide’);&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://www.leepeng..top/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>老是忘记的小问题!</title>
+    <link href="http://www.leepeng..top/2017/05/02/wangjidexiaowenti/"/>
+    <id>http://www.leepeng..top/2017/05/02/wangjidexiaowenti/</id>
+    <published>2017-05-01T16:00:00.000Z</published>
+    <updated>2018-01-21T10:00:37.445Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、火狐FF里INPUT标签刷新页面后 仍然保存之前输入的内容。</p><p>直接在input 标签里 增加 autocomplete=”off”。火狐默认为 on。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、火狐FF里INPUT标签刷新页面后 仍然保存之前输入的内容。&lt;/p&gt;
+&lt;p&gt;直接在input 标签里 增加 autocomplete=”off”。火狐默认为 on。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="html" scheme="http://www.leepeng..top/tags/html/"/>
     
   </entry>
   

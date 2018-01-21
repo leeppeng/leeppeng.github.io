@@ -39,29 +39,28 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框]]></title>
-    <url>%2F2017%2F05%2F02%2F2017-05-02-bootstrap-addiframe-close-modal%2F</url>
-    <content type="text"><![CDATA[bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框 bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框window.parent.$(‘#myModal’).modal(‘hide’); eg:window.self功能：是对当前窗口自身的引用。它和window属性是等价的。语法：window.self注：window、self、window.self是等价的。 window.top功能：返回顶层窗口，即浏览器窗口。语法：window.top注：如果窗口本身就是顶层窗口，top属性返回的是对自身的引用。 window.parent功能：返回父窗口。语法：window.parent注：如果窗口本身是顶层窗口，parent属性返回的是对自身的引用。在框架网页中，一般父窗口就是顶层窗口，但如果框架中还有框架，父窗口和顶层窗口就不一定相同了。 判断当前窗口是否在一个框架中： &lt; script type=”text/JavaScript“ &gt;var b = window.top!=window.self;document.write( “当前窗口是否在一个框架中：”+b );&lt; /script &gt;]]></content>
-      <tags>
-        <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[老是忘记的小问题!]]></title>
-    <url>%2F2017%2F05%2F02%2F2017-06-26-lanshiwangjidexiaowenti%2F</url>
-    <content type="text"><![CDATA[老是忘记的小问题!（） 1、火狐FF里INPUT标签刷新页面后 仍然保存之前输入的内容。 直接在input 标签里 增加 autocomplete=”off”。火狐默认为 on。]]></content>
-      <tags>
-        <tag>js</tag>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[屏蔽双击选中文字的方法!]]></title>
     <url>%2F2017%2F05%2F02%2Fpingbishuangjixuanzhongzi%2F</url>
     <content type="text"><![CDATA[屏蔽双击选中文字的方法! FF用样式 ：-moz-user-select:none; FF以外的浏览器用：onselectstart=”return false”（直接加在需要作用的标签） eg: &lt;div class=”test” onselectstart=”return false” style=”-moz-user-select:none;” &gt;你选不到我。。。（屏蔽双击选中文字的区域）&lt;/div&gt; 如果你在标签里加了onselectstart=”return false” 那标签内的文字都没法选中了。。 css禁止双击页面选中文本 user-select：none | text | all | element默认值：text适用于：除替换元素外的所有元素继承性：无动画性：否计算值：指定值取值：none：文本不能被选择text：可以选择文本all：当所有内容作为一个整体时可以被选择。如果双击或者在上下文上点击子元素，那么被选择的部分将是以该子元素向上回溯的最高祖先元素。element：可以选择文本，但选择范围受元素边界的约束]]></content>
       <tags>
         <tag>js</tag>
         <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框]]></title>
+    <url>%2F2017%2F05%2F02%2Fbootstrap-addiframe-close-modal%2F</url>
+    <content type="text"><![CDATA[bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框window.parent.$(‘#myModal’).modal(‘hide’);eg:window.self功能：是对当前窗口自身的引用。它和window属性是等价的。语法：window.self注：window、self、window.self是等价的。 window.top功能：返回顶层窗口，即浏览器窗口。语法：window.top注：如果窗口本身就是顶层窗口，top属性返回的是对自身的引用。 window.parent功能：返回父窗口。语法：window.parent注：如果窗口本身是顶层窗口，parent属性返回的是对自身的引用。在框架网页中，一般父窗口就是顶层窗口，但如果框架中还有框架，父窗口和顶层窗口就不一定相同了。 判断当前窗口是否在一个框架中： &lt; script type=”text/JavaScript” &gt;var b = window.top!=window.self;document.write( “当前窗口是否在一个框架中：”+b );&lt; /script &gt;]]></content>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[老是忘记的小问题!]]></title>
+    <url>%2F2017%2F05%2F02%2Fwangjidexiaowenti%2F</url>
+    <content type="text"><![CDATA[1、火狐FF里INPUT标签刷新页面后 仍然保存之前输入的内容。 直接在input 标签里 增加 autocomplete=”off”。火狐默认为 on。]]></content>
+      <tags>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
