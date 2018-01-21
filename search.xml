@@ -39,11 +39,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2017%2F05%2F07%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to LeePeng’s blog! 我是李鹏，web前端 &amp; 设计师。音乐重度依赖患者，设计师强迫症患者，书买得比看得多患者，毒舌患者，科技产品发布会观看癖患者，间歇性感伤患者，习惯性熬夜患者。]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框]]></title>
     <url>%2F2017%2F05%2F02%2F2017-05-02-bootstrap-addiframe-close-modal%2F</url>
     <content type="text"><![CDATA[bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框 bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框window.parent.$(‘#myModal’).modal(‘hide’); eg:window.self功能：是对当前窗口自身的引用。它和window属性是等价的。语法：window.self注：window、self、window.self是等价的。 window.top功能：返回顶层窗口，即浏览器窗口。语法：window.top注：如果窗口本身就是顶层窗口，top属性返回的是对自身的引用。 window.parent功能：返回父窗口。语法：window.parent注：如果窗口本身是顶层窗口，parent属性返回的是对自身的引用。在框架网页中，一般父窗口就是顶层窗口，但如果框架中还有框架，父窗口和顶层窗口就不一定相同了。 判断当前窗口是否在一个框架中： &lt; script type=”text/JavaScript“ &gt;var b = window.top!=window.self;document.write( “当前窗口是否在一个框架中：”+b );&lt; /script &gt;]]></content>
@@ -68,5 +63,10 @@
         <tag>js</tag>
         <tag>css</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F05%2F01%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to LeePeng’s blog! 我是李鹏，web前端 &amp; 设计师。音乐重度依赖患者，设计师强迫症患者，书买得比看得多患者，毒舌患者，科技产品发布会观看癖患者，间歇性感伤患者，习惯性熬夜患者。]]></content>
   </entry>
 </search>
