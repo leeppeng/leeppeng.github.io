@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="LeePeng&#39;s blog">
 <meta property="og:description" content="let命令1、let命令， 用来声明变量。 它的用法类似于var， 但是所声明的变量， 只在let命令所在的代码块内有效。2、变量一定要在声明后使用， 否则报错。3、使用let命令声明变量之前， 该变量都是不可用的。4、变量x使用let命令声明， 所以在声明之前， 都属于x的“死区”， 只要用到该变量就会报错。 因此， typeof运行时就会抛出一个ReferenceError。5、let不允许在">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-21T10:13:46.619Z">
+<meta property="og:updated_time" content="2018-01-21T14:20:01.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6-let,const">
 <meta name="twitter:description" content="let命令1、let命令， 用来声明变量。 它的用法类似于var， 但是所声明的变量， 只在let命令所在的代码块内有效。2、变量一定要在声明后使用， 否则报错。3、使用let命令声明变量之前， 该变量都是不可用的。4、变量x使用let命令声明， 所以在声明之前， 都属于x的“死区”， 只要用到该变量就会报错。 因此， typeof运行时就会抛出一个ReferenceError。5、let不允许在">
@@ -364,8 +364,12 @@
       
 
       
-        <h3 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h3><p>1、let命令， 用来声明变量。 它的用法类似于var， 但是所声明的变量， 只在let命令所在的代码块内有效。<br>2、变量一定要在声明后使用， 否则报错。<br>3、使用let命令声明变量之前， 该变量都是不可用的。<br>4、变量x使用let命令声明， 所以在声明之前， 都属于x的“死区”， 只要用到该变量就会报错。 因此， typeof运行时就会抛出一个ReferenceError。<br>5、let不允许在相同作用域内， 重复声明同一个变量。<br>eg:<br>{<br>    let a = 10;<br>    var b = 1;<br>}<br>console.log(a) // ReferenceError: a is not defined.<br>console.log(b) // 1<br>for循环的计数器，很适合使用let<br>eg:<br>for(let i =0;i&lt; arr.length;i++ ){}<br>console.log(i) // ReferenceError: a is not defined.<br><a id="more"></a></p>
-<h3 id="const-命令"><a href="#const-命令" class="headerlink" title="const 命令"></a>const 命令</h3><p>1、const声明一个只读的常量。 一旦声明， 常量的值就不能改变。（ eg 1 ）<br>2、const声明的变量不得改变值， 这意味着， const一旦声明变量， 就必须立即初始化， 不能留到以后赋值。<br>3、const的作用域与let命令相同： 只在声明所在的块级作用域内有效。<br>4、const命令声明的常量也是不提升， 同样存在暂时性死区， 只能在声明的位置后面使用。<br>eg 1:<br>const PI = 3.1415;<br>PI // 3.1415<br>PI = 3;<br>// TypeError: Assignment to constant variable.<br>对于复合类型的变量， 变量名不指向数据， 而是指向数据所在的地址。const命令只是保证变量名指向的地址不变， 并不保证该地址的数据不变， 所以将一个对象声明为常量必须非常小心。<br>const foo = {};<br>foo.prop = 123;<br>foo.prop<br>// 123<br>foo = {}; // TypeError: “foo” is read-only<br>上面代码中， 常量foo储存的是一个地址， 这个地址指向一个对象。 不可变的只是这个地址， 即不能把foo指向另一个地址， 但对象本身是可变的， 所以依然可以为其添加新属性。</p>
+        <h3 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h3><p>1、let命令， 用来声明变量。 它的用法类似于var， 但是所声明的变量， 只在let命令所在的代码块内有效。<br>2、变量一定要在声明后使用， 否则报错。<br>3、使用let命令声明变量之前， 该变量都是不可用的。<br>4、变量x使用let命令声明， 所以在声明之前， 都属于x的“死区”， 只要用到该变量就会报错。 因此， typeof运行时就会抛出一个ReferenceError。<br>5、let不允许在相同作用域内， 重复声明同一个变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	let a = 10;</span><br><span class="line">	var b = 1;</span><br><span class="line">&#125; </span><br><span class="line">console.log(a) // ReferenceError: a is not defined.</span><br><span class="line">console.log(b) // 1</span><br></pre></td></tr></table></figure></p>
+<p>for循环的计数器，很适合使用let<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for(let i =0;i&lt; arr.length;i++ )&#123;&#125;</span><br><span class="line">console.log(i) // ReferenceError: a is not defined.</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="const-命令"><a href="#const-命令" class="headerlink" title="const 命令"></a>const 命令</h3><p>1、const声明一个只读的常量。 一旦声明， 常量的值就不能改变。（ eg 1 ）<br>2、const声明的变量不得改变值， 这意味着， const一旦声明变量， 就必须立即初始化， 不能留到以后赋值。<br>3、const的作用域与let命令相同： 只在声明所在的块级作用域内有效。<br>4、const命令声明的常量也是不提升， 同样存在暂时性死区， 只能在声明的位置后面使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const PI = 3.1415;</span><br><span class="line">PI // 3.1415</span><br><span class="line">PI = 3;</span><br></pre></td></tr></table></figure></p>
+<p>// TypeError: Assignment to constant variable.<br>对于复合类型的变量， 变量名不指向数据， 而是指向数据所在的地址。const命令只是保证变量名指向的地址不变， 并不保证该地址的数据不变， 所以将一个对象声明为常量必须非常小心。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const foo = &#123;&#125;;</span><br><span class="line">foo.prop = 123;</span><br><span class="line">foo.prop</span><br><span class="line">// 123</span><br><span class="line">foo = &#123;&#125;; // TypeError: &quot;foo&quot; is read-only</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中， 常量foo储存的是一个地址， 这个地址指向一个对象。 不可变的只是这个地址， 即不能把foo指向另一个地址， 但对象本身是可变的， 所以依然可以为其添加新属性。</p>
 
       
     </div>
@@ -408,8 +412,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/05/2017-08-05-html/" rel="prev" title="HTML-&#65279导致页面顶部空白一行">
-                HTML-&#65279导致页面顶部空白一行 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/05/es6-set-map/" rel="prev" title="ES6-set-map">
+                ES6-set-map <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
