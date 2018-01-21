@@ -57,8 +57,8 @@
   </entry>
   <entry>
     <title><![CDATA[屏蔽双击选中文字的方法!]]></title>
-    <url>%2F2017%2F05%2F02%2F2017-05-02-pingbishuangjixuanzhongzi%2F</url>
-    <content type="text"><![CDATA[屏蔽双击选中文字的方法! FF用样式 ：-moz-user-select:none; FF以外的浏览器用：onselectstart=”return false”（直接加在需要作用的标签） eg: &lt;div class=”test” onselectstart=”return false” style=”-moz-user-select:none;” &gt;你选不到我。。。（屏蔽双击选中文字的区域）&lt;/div&gt; 如果你在标签里加了onselectstart=”return false” 那标签内的文字都没法选中了。。 css禁止双击页面选中文本user-select：none | text | all | element默认值：text适用于：除替换元素外的所有元素继承性：无动画性：否计算值：指定值取值：none：文本不能被选择text：可以选择文本all：当所有内容作为一个整体时可以被选择。如果双击或者在上下文上点击子元素，那么被选择的部分将是以该子元素向上回溯的最高祖先元素。element：可以选择文本，但选择范围受元素边界的约束]]></content>
+    <url>%2F2017%2F05%2F02%2Fpingbishuangjixuanzhongzi%2F</url>
+    <content type="text"><![CDATA[屏蔽双击选中文字的方法! FF用样式 ：-moz-user-select:none; FF以外的浏览器用：onselectstart=”return false”（直接加在需要作用的标签） eg: &lt;div class=”test” onselectstart=”return false” style=”-moz-user-select:none;” &gt;你选不到我。。。（屏蔽双击选中文字的区域）&lt;/div&gt; 如果你在标签里加了onselectstart=”return false” 那标签内的文字都没法选中了。。 css禁止双击页面选中文本 user-select：none | text | all | element默认值：text适用于：除替换元素外的所有元素继承性：无动画性：否计算值：指定值取值：none：文本不能被选择text：可以选择文本all：当所有内容作为一个整体时可以被选择。如果双击或者在上下文上点击子元素，那么被选择的部分将是以该子元素向上回溯的最高祖先元素。element：可以选择文本，但选择范围受元素边界的约束]]></content>
       <tags>
         <tag>js</tag>
         <tag>css</tag>
