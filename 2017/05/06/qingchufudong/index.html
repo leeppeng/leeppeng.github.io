@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="-css -clear," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="前端&amp;设计 | 写写代码，做做设计">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LeePeng&#39;s blog">
-<meta property="og:url" content="http://www.leepeng..top/tags/html/index.html">
+<meta name="description" content="1、结尾处加空div标签 clear:both;原理：添加一个空div，利用css提高的clear:both清除浮动，让父级div能自动获取到高度优点：简单、代码少、浏览器支持好、不容易出现怪问题缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div，让人感觉很不好建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法  2、父级div定义 伪类:after 和 zoom原理：I">
+<meta name="keywords" content="-css -clear">
+<meta property="og:type" content="article">
+<meta property="og:title" content="清除浮动的方法">
+<meta property="og:url" content="http://www.leepeng..top/2017/05/06/qingchufudong/index.html">
 <meta property="og:site_name" content="LeePeng&#39;s blog">
-<meta property="og:description" content="前端&amp;设计 | 写写代码，做做设计">
+<meta property="og:description" content="1、结尾处加空div标签 clear:both;原理：添加一个空div，利用css提高的clear:both清除浮动，让父级div能自动获取到高度优点：简单、代码少、浏览器支持好、不容易出现怪问题缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div，让人感觉很不好建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法  2、父级div定义 伪类:after 和 zoom原理：I">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-17T06:34:55.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeePeng&#39;s blog">
-<meta name="twitter:description" content="前端&amp;设计 | 写写代码，做做设计">
+<meta name="twitter:title" content="清除浮动的方法">
+<meta name="twitter:description" content="1、结尾处加空div标签 clear:both;原理：添加一个空div，利用css提高的clear:both清除浮动，让父级div能自动获取到高度优点：简单、代码少、浏览器支持好、不容易出现怪问题缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div，让人感觉很不好建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法  2、父级div定义 伪类:after 和 zoom原理：I">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.leepeng..top/tags/html/"/>
+  <link rel="canonical" href="http://www.leepeng..top/2017/05/06/qingchufudong/"/>
 
 
 
 
 
-  <title>标签: html | LeePeng's blog</title>
+  <title>清除浮动的方法 | LeePeng's blog</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,82 +283,153 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>html<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/05/06/qingchufudong/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeePeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head-portait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeePeng's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/08/05/html-kongbai/" itemprop="url">
-              
-                <span itemprop="name">HTML-&#65279导致页面顶部空白一行</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">清除浮动的方法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-05T00:00:00+08:00"
-              content="2017-08-05" >
-          08-05
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T00:00:00+08:00">
+                2017-05-06
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/02/wangjidexiaowenti/" itemprop="url">
-              
-                <span itemprop="name">老是忘记的小问题!</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-02T00:00:00+08:00"
-              content="2017-05-02" >
-          05-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <p>1、结尾处加空div标签 clear:both;<br>原理：添加一个空div，利用css提高的clear:both清除浮动，让父级div能自动获取到高度<br>优点：简单、代码少、浏览器支持好、不容易出现怪问题<br>缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div，让人感觉很不好<br>建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法 </p>
+<p>2、父级div定义 伪类:after 和 zoom<br>原理：IE8以上和非IE浏览器才支持:after，原理和方法2有点类似，zoom(IE转有属性)可解决ie6,ie7浮动问题<br>优点：浏览器支持好、不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）<br>缺点：代码多、不少初学者不理解原理，要两句代码结合使用才能让主流浏览器都支持。<br>建议：推荐使用，建议定义公共类，以减少CSS代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*清除浮动*/</span><br><span class="line">.clearfix:before,.clearfix:after &#123;</span><br><span class="line">  content: &quot;&quot;;</span><br><span class="line">  display: table;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">  clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3、父级div定义 overflow:hidden<br>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度<br>优点：简单、代码少、浏览器支持好<br>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。<br>建议：只推荐没有使用position或对overflow:hidden理解比较深的朋友使用。<br>4、父级div定义 display:flow-root;<br>很遗憾，只有最火狐53+，chrome58+，opera45+，才支持。不过未来，应该都会支持吧。<br>我们也可以用@supports(display:flow-root){}来进行优雅降级处理。<br>或者用@@supports not (display:flow-root){}来进行渐进增强处理。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css-clear/" rel="tag"># -css -clear</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/05/es6-set-map/" rel="next" title="ES6-set-map">
+                <i class="fa fa-chevron-left"></i> ES6-set-map
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/06/yemianbuju/" rel="prev" title="页面布局">
+                页面布局 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -364,6 +437,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -603,6 +680,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
