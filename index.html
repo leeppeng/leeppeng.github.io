@@ -739,7 +739,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/21/js-find-findIndex-filter/" itemprop="url">js</a></h1>
+                <a class="post-title-link" href="/2017/08/21/js-find-findIndex-filter/" itemprop="url">js-filter()/findIndex()/find()</a></h1>
         
 
         <div class="post-meta">
@@ -805,12 +805,6 @@
 <p>用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined。<br>find方法的回调函数可以接受三个参数，依次为当前的值、当前的位置和原数组。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[1, 4, -5, 10].find((n) =&gt; n &lt; 0)  </span><br><span class="line">// -5  </span><br><span class="line">[1, 5, 10, 15].find(function(value, index, arr) &#123;  </span><br><span class="line">return value &gt; 9;  </span><br><span class="line">&#125;) // 10</span><br></pre></td></tr></table></figure></p>
 <p>findIndex()/find()这两个方法都可以发现NaN，弥补了数组的IndexOf方法的不足。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[NaN].indexOf(NaN)  </span><br><span class="line">// -1  </span><br><span class="line">[NaN].findIndex(y =&gt; Object.is(NaN, y))  </span><br><span class="line">// 0</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<p>4、<br>&gt;<br>&gt;<br>&gt;<br>&gt;<br>&gt;</p>
-<p>5、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>6、</p>
-<blockquote>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
           
         
