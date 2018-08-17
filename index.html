@@ -375,23 +375,11 @@
 <p><style>#jsPagination ul{display: flow-root;}#jsPagination ul li{display: inline-block; border:1px solid #999; padding: 3px 10px;}#jsPagination ul li.cur{background: #999;}</style></p>
 <p><div id="jsPagination"></div></p>
 <script>
-function $(id){
-  if(typeof id !== 'string'){
-    return null;
-  }
-  let firstStr = id.charAt(0);
-  if(firstStr === '#'){
-    return document.querySelector(id);
-  }else{
-    let len = document.querySelectorAll(id).length;
-    console.log(len)
-    return len == 1 ? document.querySelectorAll(id)[0] : document.querySelectorAll(id);
-  }
-}
 const perpages=5;//按钮个数
 const step = (perpages-1)/2;
+let jsPaginationbox = document.querySelectorAll(#jsPagination)
 function jsPagination(total,current){
-  $("#jsPagination").innerHTML='';
+  jsPaginationbox.innerHTML='';
   const _step = {
     start:current-step,
     end:current+step
@@ -426,11 +414,12 @@ function jsPagination(total,current){
   }
   Ul.innerHTML = htmlLi
   //console.log(Ul)
-  $("#jsPagination").appendChild(Ul)
+  jsPaginationbox.appendChild(Ul)
 }
 jsPagination(10,1);
-let pageLi = $("#jsPagination ul").querySelectorAll('li')
-$("#jsPagination").addEventListener('click',function (event){
+let ulBox = jsPaginationbox.querySelector('ul')
+let pageLi = ulBox.querySelectorAll('li')
+jsPaginationbox.addEventListener('click',function (event){
   let el = event.target
   if(el.tagName.toLowerCase() === 'li'){
     let id= +(el.getAttribute("id"));
