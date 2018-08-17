@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="前端&amp;设计 | 写写代码，做做设计">
+<meta name="description" content="前端&amp;设计 | web前端 js css html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="LeePeng&#39;s blog">
 <meta property="og:url" content="http://www.leepeng..top/index.html">
 <meta property="og:site_name" content="LeePeng&#39;s blog">
-<meta property="og:description" content="前端&amp;设计 | 写写代码，做做设计">
+<meta property="og:description" content="前端&amp;设计 | web前端 js css html">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeePeng&#39;s blog">
-<meta name="twitter:description" content="前端&amp;设计 | 写写代码，做做设计">
+<meta name="twitter:description" content="前端&amp;设计 | web前端 js css html">
 
 
 
@@ -282,6 +282,187 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2018/08/17/page-pagination/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LeePeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head-portait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LeePeng's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/17/page-pagination/" itemprop="url">分页组件pagination</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-17T00:00:00+08:00">
+                2018-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!-- Welcome to LeePeng's [blog](www.leepeng.top/)!  -->
+<p><img src="/images/geturl.jpg" class="full-image"></p>
+<h3 id="分页组件需求如下"><a href="#分页组件需求如下" class="headerlink" title="分页组件需求如下"></a>分页组件需求如下</h3><blockquote>
+<p> 1、最多连续显示5页，居中高亮显示current页（如demo1所示)<br>2、total为0时，隐藏整个元素（如demo2所示）<br>3、如果total&lt;=5，则显示全部页数，隐藏“首页”和“末页”元素（如demo3所示）<br>4、当current居中不足5页，向后(前)补足5页，隐藏“首页”(“末页”)元素(如demo4和demo5所示)<br>5、total、current均为正整数，1 &lt;= current（当前） &lt;= total（总页数）</p>
+</blockquote>
+<p><style></p>
+<p>#jsPagination ul{display: flow-root;}</p>
+<p>#jsPagination ul li{display: inline-block; border:1px solid #999; padding: 3px 10px;}</p>
+<p>#jsPagination ul li.cur{background: #999;}<br></style></p>
+<p><div id="jsPagination"></div></p>
+<script>
+const perpages=5;//按钮个数
+const step = (perpages-1)/2;
+function jsPagination(total,current){
+  $("#jsPagination").innerHTML='';
+  const _step = {
+    start:current-step,
+    end:current+step
+  }
+  if(_step.start<1){
+    _step.end = _step.end + (1 - _step.start)
+    _step.start = 1
+    //console.log(_step.end,_step.start)
+  }
+  if(_step.end>total){
+    _step.start = _step.start - (_step.end - total);
+    _step.end = total;
+    //console.log(_step.end,_step.start)
+  }
+  if (_step.start < 1) _step.start = 1
+  //console.log(_step.end,_step.start)
+  let htmlLi=''
+  let Ul = document.createElement('ul');
+  if(current !==1 ){
+    htmlLi += '<li id="'+(current-1)+'">上一页</li>'
+  }
+  for (let i = _step.start; i <= _step.end; i++) {
+    if(current === i){
+      htmlLi += '<li class="cur">'+i+'</li>'
+    }else{
+      htmlLi += '<li id="'+i+'">'+i+'</li>'
+    }
+    //let arr.push(i)
+  }
+  if(current !==_step.end ){
+    htmlLi += '<li id="'+(current+1)+'">下一页</li>'
+  }
+  Ul.innerHTML = htmlLi
+  //console.log(Ul)
+  $("#jsPagination").appendChild(Ul)
+}
+jsPagination(4,1);
+let pageLi = $("#jsPagination ul").querySelectorAll('li')
+$("#jsPagination").addEventListener('click',function (event){
+  let el = event.target
+  let id= +(el.getAttribute("id"));
+  console.log(id)
+  jsPagination(10,id);
+},false)
+</script>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">#jsPagination ul&#123;display: flow-root;&#125;</span><br><span class="line">#jsPagination ul li&#123;display: inline-block; border:1px solid #999; padding: 3px 10px;&#125;</span><br><span class="line">#jsPagination ul li.cur&#123;background: #999;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;jsPagination&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">const perpages=5;//按钮个数</span><br><span class="line">const step = (perpages-1)/2;</span><br><span class="line">function jsPagination(total,current)&#123;</span><br><span class="line">  $(&quot;#jsPagination&quot;).innerHTML=&apos;&apos;;</span><br><span class="line">  const _step = &#123;</span><br><span class="line">    start:current-step,</span><br><span class="line">    end:current+step</span><br><span class="line">  &#125;</span><br><span class="line">  if(_step.start&lt;1)&#123;</span><br><span class="line">    _step.end = _step.end + (1 - _step.start)</span><br><span class="line">    _step.start = 1</span><br><span class="line">    //console.log(_step.end,_step.start)</span><br><span class="line">  &#125;</span><br><span class="line">  if(_step.end&gt;total)&#123;</span><br><span class="line">    _step.start = _step.start - (_step.end - total);</span><br><span class="line">    _step.end = total;</span><br><span class="line">    //console.log(_step.end,_step.start)</span><br><span class="line">  &#125;</span><br><span class="line">  if (_step.start &lt; 1) _step.start = 1</span><br><span class="line">  //console.log(_step.end,_step.start)</span><br><span class="line">  let htmlLi=&apos;&apos;</span><br><span class="line">  let Ul = document.createElement(&apos;ul&apos;);</span><br><span class="line">  if(current !==1 )&#123;</span><br><span class="line">    htmlLi += &apos;&lt;li id=&quot;&apos;+(current-1)+&apos;&quot;&gt;上一页&lt;/li&gt;&apos;</span><br><span class="line">  &#125;</span><br><span class="line">  for (let i = _step.start; i &lt;= _step.end; i++) &#123;</span><br><span class="line">    if(current === i)&#123;</span><br><span class="line">      htmlLi += &apos;&lt;li class=&quot;cur&quot;&gt;&apos;+i+&apos;&lt;/li&gt;&apos;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      htmlLi += &apos;&lt;li id=&quot;&apos;+i+&apos;&quot;&gt;&apos;+i+&apos;&lt;/li&gt;&apos;</span><br><span class="line">    &#125;</span><br><span class="line">    //let arr.push(i)</span><br><span class="line">  &#125;</span><br><span class="line">  if(current !==_step.end )&#123;</span><br><span class="line">    htmlLi += &apos;&lt;li id=&quot;&apos;+(current+1)+&apos;&quot;&gt;下一页&lt;/li&gt;&apos;</span><br><span class="line">  &#125;</span><br><span class="line">  Ul.innerHTML = htmlLi</span><br><span class="line">  //console.log(Ul)</span><br><span class="line">  $(&quot;#jsPagination&quot;).appendChild(Ul)</span><br><span class="line">&#125;</span><br><span class="line">jsPagination(4,1);</span><br><span class="line">let pageLi = $(&quot;#jsPagination ul&quot;).querySelectorAll(&apos;li&apos;)</span><br><span class="line">$(&quot;#jsPagination&quot;).addEventListener(&apos;click&apos;,function (event)&#123;</span><br><span class="line">  let el = event.target</span><br><span class="line">  let id= +(el.getAttribute(&quot;id&quot;));</span><br><span class="line">  console.log(id)</span><br><span class="line">  jsPagination(10,id);</span><br><span class="line">&#125;,false)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1523,128 +1704,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.leepeng..top/2017/05/06/qingchufudong/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LeePeng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head-portait.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LeePeng's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/06/qingchufudong/" itemprop="url">清除浮动的方法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T00:00:00+08:00">
-                2017-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、结尾处加空div标签 clear:both;<br>原理：添加一个空div，利用css提高的clear:both清除浮动，让父级div能自动获取到高度<br>优点：简单、代码少、浏览器支持好、不容易出现怪问题<br>缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div，让人感觉很不好<br>建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法 </p>
-<p>2、父级div定义 伪类:after 和 zoom<br>原理：IE8以上和非IE浏览器才支持:after，原理和方法2有点类似，zoom(IE转有属性)可解决ie6,ie7浮动问题<br>优点：浏览器支持好、不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）<br>缺点：代码多、不少初学者不理解原理，要两句代码结合使用才能让主流浏览器都支持。<br>建议：推荐使用，建议定义公共类，以减少CSS代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*清除浮动*/</span><br><span class="line">.clearfix:before,.clearfix:after &#123;</span><br><span class="line">  content: &quot;&quot;;</span><br><span class="line">  display: table;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">  clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>3、父级div定义 overflow:hidden<br>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度<br>优点：简单、代码少、浏览器支持好<br>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。<br>建议：只推荐没有使用position或对overflow:hidden理解比较深的朋友使用。<br>4、父级div定义 display:flow-root;<br>很遗憾，只有最火狐53+，chrome58+，opera45+，才支持。不过未来，应该都会支持吧。<br>我们也可以用@supports(display:flow-root){}来进行优雅降级处理。<br>或者用@@supports not (display:flow-root){}来进行渐进增强处理。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1689,7 +1748,7 @@
                 alt="LeePeng" />
             
               <p class="site-author-name" itemprop="name">LeePeng</p>
-              <p class="site-description motion-element" itemprop="description">前端&设计 | 写写代码，做做设计</p>
+              <p class="site-description motion-element" itemprop="description">前端&设计 | web前端 js css html</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -1699,7 +1758,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1712,7 +1771,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[分页组件pagination]]></title>
+    <url>%2F2018%2F08%2F17%2Fpage-pagination%2F</url>
+    <content type="text"><![CDATA[分页组件需求如下 1、最多连续显示5页，居中高亮显示current页（如demo1所示)2、total为0时，隐藏整个元素（如demo2所示）3、如果total&lt;=5，则显示全部页数，隐藏“首页”和“末页”元素（如demo3所示）4、当current居中不足5页，向后(前)补足5页，隐藏“首页”(“末页”)元素(如demo4和demo5所示)5、total、current均为正整数，1 &lt;= current（当前） &lt;= total（总页数） #jsPagination ul{display: flow-root;} #jsPagination ul li{display: inline-block; border:1px solid #999; padding: 3px 10px;} #jsPagination ul li.cur{background: #999;} const perpages=5;//按钮个数 const step = (perpages-1)/2; function jsPagination(total,current){ $("#jsPagination").innerHTML=''; const _step = { start:current-step, end:current+step } if(_step.starttotal){ _step.start = _step.start - (_step.end - total); _step.end = total; //console.log(_step.end,_step.start) } if (_step.start < 1) _step.start = 1 //console.log(_step.end,_step.start) let htmlLi='' let Ul = document.createElement('ul'); if(current !==1 ){ htmlLi += '上一页' } for (let i = _step.start; i]]></content>
+      <tags>
+        <tag>-js -分页</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[获取url参数]]></title>
     <url>%2F2018%2F03%2F02%2Fget-url-parameter%2F</url>
     <content type="text"><![CDATA[获取url参数 指定参数名称，返回该参数的值 或者 空字符串 不指定参数名称，返回全部的参数对象 或者 {} 如果存在多个同名参数，则返回数组window.location.href 取当前页面url 1234567891011121314151617181920212223242526272829303132333435// 获取 url 中的参数 let Urlstr = &apos;http://www.nowcoder.com?key=1&amp;key=2&amp;key=3&amp;test=4#hehe&apos;; function getUrlParam(sUrl, sKey) &#123; console.log(sKey) let queryString = sUrl.split(&apos;#&apos;)[0].split(&apos;?&apos;)[1]; console.log(queryString) // queryString==undefined ===&gt;url中没有？||# // queryString==&apos;&apos; ===&gt;url中有？||# 但没参数 if(queryString==undefined || queryString==&apos;&apos;)&#123; if(sKey==undefined)&#123; // 是否有传入key return &#123;&#125; &#125;else&#123; return &apos;&apos;; &#125; &#125; let query = queryString.split(&apos;&amp;&apos;); let newObj=&#123;&#125;; for(let i=0;i&lt;query.length;i++)&#123; let keyValue = query[i].split(&apos;=&apos;); let key = keyValue[0] let value = keyValue[1] if (!(key in newObj)) &#123; newObj[key] = []; &#125; newObj[key].push(value); &#125; console.log(newObj) if(sKey)&#123; // console.log(newObj[sKey]) return newObj[sKey] ? newObj[sKey] : &apos;&apos; &#125;else&#123; return newObj &#125; &#125; console.log(getUrlParam(Urlstr,&apos;key&apos;))]]></content>
@@ -99,6 +107,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[老是忘记的小问题!]]></title>
+    <url>%2F2017%2F05%2F02%2Fwangjidexiaowenti%2F</url>
+    <content type="text"><![CDATA[1、火狐FF里INPUT标签刷新页面后 仍然保存之前输入的内容。 直接在input 标签里 增加 autocomplete=”off”。火狐默认为 on。]]></content>
+      <tags>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[屏蔽双击选中文字的方法!]]></title>
     <url>%2F2017%2F05%2F02%2Fpingbishuangjixuanzhongzi%2F</url>
     <content type="text"><![CDATA[屏蔽双击选中文字的方法! onselectstart=”return false”（直接加在需要作用的标签） eg: &lt;div class=”test” onselectstart=”return false” style=”-moz-user-select:none;” &gt;你选不到我。。。（屏蔽双击选中文字的区域）&lt;/div&gt; 如果你在标签里加了onselectstart=”return false” 那标签内的文字都没法选中了。。 css禁止双击页面选中文本 user-select：none | text | all | element默认值：text适用于：除替换元素外的所有元素继承性：无动画性：否计算值：指定值取值：none：文本不能被选择text：可以选择文本all：当所有内容作为一个整体时可以被选择。如果双击或者在上下文上点击子元素，那么被选择的部分将是以该子元素向上回溯的最高祖先元素。element：可以选择文本，但选择范围受元素边界的约束]]></content>
@@ -113,14 +129,6 @@
     <content type="text"><![CDATA[bootstrap在模态框里加载iframe页面（iframe里的关闭按钮）的时候如何关闭模态框window.parent.$(‘#myModal’).modal(‘hide’);eg:window.self功能：是对当前窗口自身的引用。它和window属性是等价的。语法：window.self注：window、self、window.self是等价的。 window.top功能：返回顶层窗口，即浏览器窗口。语法：window.top注：如果窗口本身就是顶层窗口，top属性返回的是对自身的引用。 window.parent功能：返回父窗口。语法：window.parent注：如果窗口本身是顶层窗口，parent属性返回的是对自身的引用。在框架网页中，一般父窗口就是顶层窗口，但如果框架中还有框架，父窗口和顶层窗口就不一定相同了。 判断当前窗口是否在一个框架中： &lt; script type=”text/JavaScript” &gt;var b = window.top!=window.self;document.write( “当前窗口是否在一个框架中：”+b );&lt; /script &gt;]]></content>
       <tags>
         <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[老是忘记的小问题!]]></title>
-    <url>%2F2017%2F05%2F02%2Fwangjidexiaowenti%2F</url>
-    <content type="text"><![CDATA[1、火狐FF里INPUT标签刷新页面后 仍然保存之前输入的内容。 直接在input 标签里 增加 autocomplete=”off”。火狐默认为 on。]]></content>
-      <tags>
-        <tag>html</tag>
       </tags>
   </entry>
   <entry>
