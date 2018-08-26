@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>LeePeng&#39;s blog</title>
   
-  <subtitle>Quick notes</subtitle>
+  <subtitle>前端&amp;设计</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.leepeng.top/"/>
