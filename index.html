@@ -371,7 +371,8 @@
 <h3 id="WebStorage-cookie-localStorage-sessionStorage"><a href="#WebStorage-cookie-localStorage-sessionStorage" class="headerlink" title="WebStorage-cookie/localStorage/sessionStorage"></a>WebStorage-cookie/localStorage/sessionStorage</h3><h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><blockquote>
 <p>web前端存储 cookie/localStorage/sessionStorage<br>cookie 大小4kb 提交时大于4kb的部分会直接截断<br>document.cookie=”Name=value;expires=Sat, 02 May 2019 23:38:25 GMT;domain=.leepeng.top;path=/blog;secure”</p>
 <p>Cookie只是应用于浏览器端，一旦选项被设置后便不会被服务器重新取回。<br>如果在指定的请求中有多个cookies，那么它们会被分号和空格分开，例如：<br>Name=value</p>
-<p>有效期选项（The expires  option）<br>expires指定了cookie何时不会再被发送到服务器端的，因此该cookie可能会被浏览器删掉。<br>该选项所对应的值是一个格式为Wdy,DD-Mon–YYYY HH:MM:SS GMT的值，例如：<br> expires=Sat, 02 May 2009 23:38:25 GMT //toUTCString()转换<br>在没有expires选项时，cookie的寿命仅限于单一的会话中。<br>浏览器的关闭意味这一次会话的结束，所以会话cookie只存在于浏览器保持打开的状态之下。<br>如果expires选项设置了一个过去的时间点，那么这个cookie会被立即删除。<br>
+<p>有效期选项（The expires  option）<br>expires指定了cookie何时不会再被发送到服务器端的，因此该cookie可能会被浏览器删掉。<br>该选项所对应的值是一个格式为Wdy,DD-Mon–YYYY HH:MM:SS GMT的值，例如：<br> expires=Sat, 02 May 2009 23:38:25 GMT //toUTCString()转换<br>在没有expires选项时，cookie的寿命仅限于单一的会话中。<br>浏览器的关闭意味这一次会话的结束，所以会话cookie只存在于浏览器保持打开的状态之下。<br>如果expires选项设置了一个过去的时间点，那么这个cookie会被立即删除。</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/25/web-storage/#more" rel="contents">
