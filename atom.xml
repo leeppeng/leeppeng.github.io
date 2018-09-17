@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.leepeng.top/"/>
-  <updated>2018-08-26T14:20:53.673Z</updated>
+  <updated>2018-09-17T08:32:56.770Z</updated>
   <id>http://blog.leepeng.top/</id>
   
   <author>
@@ -17,13 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>js-promise</title>
+    <link href="http://blog.leepeng.top/2018/08/27/js-promise/"/>
+    <id>http://blog.leepeng.top/2018/08/27/js-promise/</id>
+    <published>2018-08-26T16:00:00.000Z</published>
+    <updated>2018-09-17T08:32:56.770Z</updated>
+    
+    <content type="html"><![CDATA[<!-- Welcome to LeePeng's [blog](www.leepeng.top/)!  --><h3 id="Js-Promise"><a href="#Js-Promise" class="headerlink" title="Js-Promise"></a>Js-Promise</h3><p><img src="/images/about-bg.jpg" class="full-image"><br>promise是用来干什么的？<br>用来处理回调，避免回调地狱<br>用来更好地处理异步行为</p><blockquote><p>Promise 有三个状态<br>  -pending  初始状态 ，未定<br>  -fulfilled 完成状态 ，成功 （resolve =&gt; fulfilled）<br>  -reject   失败<br><!-- 不可逆 --></p></blockquote><a id="more"></a><blockquote><p>.then() 有两个参数，这两个参数都是函数，它们其实是在.then()方法里进行的回调，成功：resolve失败：reject<br>.then 调用的是一个Promise对象，每一个.then()方法，都会获得上一次.then()的执行结果</p></blockquote><p>`<br>  // 创建了一个Peomise对象实例 ，_promise1<br>  let _promise1 = new Promise(function(resolve, reject){<br>    setTimeout(function(){<br>      resolve(‘2秒后，打印一个xx’)<br>    },2000)<br>  })</p><p>  _promise1<br>    .then(function(_data){<br>      // 第一个.then()，就是第一个嵌套函数<br>      // resolve,执行它<br>      // 因为在seTimeout里调用的就是resolve<br>      console.log(_data) //2秒后，打印一个xx<br>      return ‘lee’<br>    },function(_err){<br>      //reject<br>    })<br>    .then(function(data){<br>      // 第二个.then()，就是第二个嵌套函数<br>      // 它执行的data是第一个.then()返回的值<br>      console.log(data) // lee<br>      return <code>${data} peng</code><br>    },function(err){<br>      //reject<br>    })<br>    .then(function(data){<br>      // 第三个.then()，就是第三个嵌套函数<br>      // 它执行的data是第二个.then()返回的值<br>      console.log(data) // lee peng<br>    },function(err){<br>      //reject<br>    })<br>`</p><blockquote><p>.catch()<br>也返回一个Promise对象，主要用于捕获异常，所以一般.then()的第二个参数都不写，都用.catch()方法</p></blockquote><p><code>// 创建了一个Peomise对象实例 ，_promise2let _promise2 = new Promise(function(resolve, reject){  setTimeout(function(){    reject(&#39;这是一个失败操作&#39;)  },2000)})_promise2  .then(function(){    console.log(</code>成功会走这<code>)  },function(_err){ // 如果这里有了错误捕获，.catch()就不起作用了    console.log(</code>_err: ${_err}<code>)  })  .catch(function(err){    console.log(</code>catch: ${err}`)<br>  })</p><p>`</p><blockquote><p>.all()方法<br> 接收一个 promise 对象的数组作为参数，当这个数组里的所有 promise 对象全部变为resolve或 有 reject 状态出现的时候，它才会去调用 .then 方法,它们是并发执行的。<br>它就是迭代数组，用来操作一个异步什么的，其实就是一个循环<br>.all() 是一个静态方法，可以直接调用，不用new</p></blockquote><p>`<br>{<br>  let p1 = new Promise((reslove, reject) =&gt;{<br>    setTimeout(reslove, 1000, ‘111’)<br>  })<br>  let p2 = new Promise((reslove, reject) =&gt;{<br>    setTimeout(reject, 2000, ‘222’)<br>  })<br>  let p3 = new Promise((reslove, reject) =&gt;{<br>    setTimeout(reslove, 3000, ‘333’)<br>  })</p><p>  Promise.all([p1,p2,p3])<br>  .then(result =&gt; {<br>    console.log(result)<br>  })<br>  .catch(err=&gt;{<br>    console.log(err)<br>  })<br>}<br>//Promse.all在处理多个异步处理时非常有用，比如说一个页面上需要等两个或多个ajax的数据回来以后才正常显示，在此之前只显示loading图标。<br>// Promise.all获得的成功结果的数组里面的数据顺序和Promise.all接收到的数组顺序是一致的，即p1的结果在前，即便p1的结果获取的比p2要晚。这带来了一个绝大的好处：在前端开发请求数据的过程中，偶尔会遇到发送多个请求并根据请求顺序获取和使用数据的场景，使用Promise.all毫无疑问可以解决这个问题。<br>//代码模拟<br>let wake = (time) =&gt;{<br>  return new Promise((resolve, reject)=&gt;{<br>    setTimeout(resolve, time, <code>${time/1000} 秒后醒来</code>)<br>  })<br>}<br>let p1 = wake(2000)<br>let p2 = wake(3000)<br>Promise.all([p1,p2])<br>  .then((result) =&gt; {<br>    console.log(result)<br>  })<br>  .catch((err) =&gt; {<br>    console.log(err)<br>  })<br>`</p><blockquote><p>.race()<br>它的参数是一组可以迭代的参数<br>只要一组参数中，有任意一个发生变化，那么Pormise对象的状态就改变了<br>Promise.race([p1, p2, p3])里面哪个结果获得的快，就返回那个结果，不管结果本身是成功状态还是失败状态</p></blockquote><p>`<br>let p1 = new Promise(function(resolve, reject){<br>    setTimeout(resolve, 300, ‘p1…XXX’)<br>  })<br>  let p2 = new Promise(function(resolve, reject){<br>    setTimeout(resolve, 30, ‘P2….XXXX’)<br>  })<br>  let p3 = new Promise(function(resolve, reject){<br>    setTimeout(reject,200,’P3…XXX’)<br>  })</p><p>  Promise<br>    .race([p1,p2,p3])<br>    .then(function(data){<br>      console.log(data) // 谁先变化就用谁的值–p2最先完成  P2….XXXX<br>    })<br>    .catch(function(err){<br>      console.log(err)<br>    })<br>`</p><blockquote><p>resolve() 接收一个参数<br>                 –可以是普通的值<br>                 –可以是一个含的.then()方法的对象<br>                 –可以是一个Promise实例<br>三种形式的参数，无非是对数据的三种包装而已</p></blockquote><p>`<br>//（1）参数是一个 Promise 实例<br>//如果参数是 Promise 实例，那么Promise.resolve将不做任何修改、原封不动地返回这个实例。</p><p>//（2）参数是一个thenable对象<br>//thenable对象指的是具有then方法的对象，比如下面这个对象。<br>let thenable = {<br>  then: function(resolve, reject) {<br>    resolve(42);<br>  }<br>};<br>// Promise.resolve方法会将这个对象转为 Promise 对象，然后就立即执行thenable对象的then方法。<br>let p1 = Promise.resolve(thenable);<br>p1.then(function(value) {<br>  console.log(value);  // 42<br>});<br>//上面代码中，thenable对象的then方法执行后，对象p1的状态就变为resolved，从而立即执行最后那个then方法指定的回调函数，输出 42。</p><p>//（3）参数不是具有then方法的对象，或根本就不是对象<br>//如果参数是一个原始值，或者是一个不具有then方法的对象，则Promise.resolve方法返回一个新的 Promise 对象，状态为resolved。<br>const p = Promise.resolve(‘Hello’);<br>p.then(function (s){<br>  console.log(s)// Hello<br>});<br>// 上面代码生成一个新的 Promise 对象的实例p。<br>// 由于字符串Hello不属于异步操作（判断方法是字符串对象不具有 then 方法），返回 Promise 实例的状态从一生成就是resolved，所以回调函数会立即执行。<br>// Promise.resolve方法的参数，会同时传给回调函数。</p><p>`</p><blockquote><p>reject()<br>它接收的参数就是异常，此时返回Promise对象的状态是reject –失败<br><code>let L1 = Promise.reject(&#39;失败的操作&#39;)L1.then(function(data){    // 成功的  })  .catch(function(err){    console.log(</code>catch${err}<code>)  })</code></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!-- Welcome to LeePeng&#39;s [blog](www.leepeng.top/)!  --&gt;
+&lt;h3 id=&quot;Js-Promise&quot;&gt;&lt;a href=&quot;#Js-Promise&quot; class=&quot;headerlink&quot; title=&quot;Js-Promise&quot;&gt;&lt;/a&gt;Js-Promise&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/images/about-bg.jpg&quot; class=&quot;full-image&quot;&gt;&lt;br&gt;promise是用来干什么的？&lt;br&gt;用来处理回调，避免回调地狱&lt;br&gt;用来更好地处理异步行为&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Promise 有三个状态&lt;br&gt;  -pending  初始状态 ，未定&lt;br&gt;  -fulfilled 完成状态 ，成功 （resolve =&amp;gt; fulfilled）&lt;br&gt;  -reject   失败&lt;br&gt;&lt;!-- 不可逆 --&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="-promise -js" scheme="http://blog.leepeng.top/tags/promise-js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>web-storage</title>
     <link href="http://blog.leepeng.top/2018/08/25/web-storage/"/>
     <id>http://blog.leepeng.top/2018/08/25/web-storage/</id>
     <published>2018-08-24T16:00:00.000Z</published>
-    <updated>2018-08-26T14:20:53.673Z</updated>
+    <updated>2018-09-17T08:21:37.790Z</updated>
     
-    <content type="html"><![CDATA[<!-- Welcome to LeePeng's [blog](www.leepeng.top/)!  --><!-- <img src="/images/about-bg.jpg" class="full-image"> --><h3 id="WebStorage-cookie-localStorage-sessionStorage"><a href="#WebStorage-cookie-localStorage-sessionStorage" class="headerlink" title="WebStorage-cookie/localStorage/sessionStorage"></a>WebStorage-cookie/localStorage/sessionStorage</h3><h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><blockquote><p>web前端存储 cookie/localStorage/sessionStorage<br>cookie 大小4kb 提交时大于4kb的部分会直接截断<br>document.cookie=”Name=value;expires=Sat, 02 May 2019 23:38:25 GMT;domain=.leepeng.top;path=/blog;secure”</p><p>Cookie只是应用于浏览器端，一旦选项被设置后便不会被服务器重新取回。<br>如果在指定的请求中有多个cookies，那么它们会被分号和空格分开，例如：<br>Name=value</p><p>有效期选项（The expires  option）<br>expires指定了cookie何时不会再被发送到服务器端的，因此该cookie可能会被浏览器删掉。<br>该选项所对应的值是一个格式为Wdy,DD-Mon–YYYY HH:MM:SS GMT的值，例如：<br> expires=Sat, 02 May 2009 23:38:25 GMT //toUTCString()转换<br>在没有expires选项时，cookie的寿命仅限于单一的会话中。<br>浏览器的关闭意味这一次会话的结束，所以会话cookie只存在于浏览器保持打开的状态之下。<br>如果expires选项设置了一个过去的时间点，那么这个cookie会被立即删除。</p></blockquote><a id="more"></a><blockquote><p>domain选项（The domain option）<br>跨子域传cookie。<br>domain=.leepeng.top</p><p>Path选项（The path option）<br>另一个控制何时发送Cookie消息头的方式是指定path选项。<br>与domain选项相同的是，path指明了在发Cookie消息头之前必须在请求资源中存在一个URL路径。<br>这个比较是通过将path属性值与请求的URL从头开始逐字符串比较完成的。<br>如果字符匹配，则发送Cookie消息头，例如：<br> path=/blog<br>在这个例子中，path选项值会与/blog,/blogrool等等相匹配；<br>任何以/blog开头的选项都是合法的。要注意的是只有在domain选项核实完毕之后才会对path属性进行比较。<br>path属性的默认值是发送Set-Cookie消息头所对应的URL中的path部分。</p><p>secure选项（The  secure  option）<br>最后一个选项是secure。不像其它选项，该选项只是一个标记并且没有其它的值。<br>一个secure cookie只有当请求是通过SSL和HTTPS创建时，才会发送到服务器端。<br>这种cookie的内容意指具有很高的价值并且可能潜在的被破解以纯文本形式传输。例如<br> secure<br>现实中，机密且敏感的信息绝不应该在cookies中存储或传输，因为cookies的整个机制都是原本不安全的。<br>默认情况下，在HTTPS链接上传输的cookies都会被自动添加上secure选项。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function setCookie(Name,value,days,domain,path,secure)&#123;</span><br><span class="line">  var exp = new Date();</span><br><span class="line">  exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000);//过期时间天</span><br><span class="line">  expires_time = exp.toGMTString();</span><br><span class="line">  document.cookie = Name +&quot;=&quot; + escape(value) + &quot;;expires=&quot; + expires_time;</span><br><span class="line">&#125;</span><br><span class="line">function getCookie(name)&#123;</span><br><span class="line">  let searchName = name+&quot;=&quot;; // username=</span><br><span class="line">  let c = document.cookie.indexOf(searchName);</span><br><span class="line">  if (c != -1)&#123;</span><br><span class="line">    console.log(&quot;已注册&quot;);</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    console.log(&quot;您还没注册&quot;);</span><br><span class="line">    setCookie(username,leepeng,7)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 删除cookie 设置过期时间</span><br><span class="line">function clearCookie(name) &#123;  </span><br><span class="line">  setCookie(name, &quot;&quot;, -1);  </span><br><span class="line">&#125; </span><br><span class="line">getCookie(&apos;username&apos;)</span><br></pre></td></tr></table></figure><h3 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h3><blockquote><p>localStorage 和 sessionStorage 属性允许在浏览器中存储 key/value 对的数据。用法相同<br>sessionStorage 用于临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据<br>如果你想在浏览器窗口关闭后还保留数据，可以使用 localStorage 属性， 改数据对象没有过期时间，今天、下周、明年都能用，除非你手动去删除。</p><p>window.sessionStorage</p><p>保存数据语法：<br>sessionStorage.setItem(“key”, “value”);<br>sessionStorage.setItem($(this).val(),JSON.stringify(obj)); //JSON.stringify()将对象转为json字符串存储</p><p>读取数据语法：<br>var lastname = sessionStorage.getItem(“key”);</p><p>删除指定键的数据语法：<br>sessionStorage.removeItem(“key”);<br>JSON.parse(sessionStorage.getItem(key)); //JSON.parse()方法用于将一个 JSON 字符串转换为对象。</p><p>删除所有数据：<br>sessionStorage.clear();</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<!-- Welcome to LeePeng's [blog](www.leepeng.top/)!  --><!-- <img src="/images/about-bg.jpg" class="full-image"> --><h3 id="WebStorage-cookie-localStorage-sessionStorage"><a href="#WebStorage-cookie-localStorage-sessionStorage" class="headerlink" title="WebStorage-cookie/localStorage/sessionStorage"></a>WebStorage-cookie/localStorage/sessionStorage</h3><h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><blockquote><p>web前端存储 cookie/localStorage/sessionStorage<br>cookie 大小4kb 提交时大于4kb的部分会直接截断<br>document.cookie=”Name=value;expires=Sat, 02 May 2019 23:38:25 GMT;domain=.leepeng.top;path=/blog;secure”</p><p>Cookie只是应用于浏览器端，一旦选项被设置后便不会被服务器重新取回。<br>如果在指定的请求中有多个cookies，那么它们会被分号和空格分开，例如：<br>Name=value</p><p>有效期选项（The expires  option）<br>expires指定了cookie何时不会再被发送到服务器端的，因此该cookie可能会被浏览器删掉。<br>该选项所对应的值是一个格式为Wdy,DD-Mon–YYYY HH:MM:SS GMT的值，例如：<br> expires=Sat, 02 May 2009 23:38:25 GMT //toUTCString()转换<br>在没有expires选项时，cookie的寿命仅限于单一的会话中。<br>浏览器的关闭意味这一次会话的结束，所以会话cookie只存在于浏览器保持打开的状态之下。<br>如果expires选项设置了一个过去的时间点，那么这个cookie会被立即删除。</p></blockquote><a id="more"></a><blockquote><p>domain选项（The domain option）<br>跨子域传cookie。<br>domain=.leepeng.top</p><p>Path选项（The path option）<br>另一个控制何时发送Cookie消息头的方式是指定path选项。<br>与domain选项相同的是，path指明了在发Cookie消息头之前必须在请求资源中存在一个URL路径。<br>这个比较是通过将path属性值与请求的URL从头开始逐字符串比较完成的。<br>如果字符匹配，则发送Cookie消息头，例如：<br> path=/blog<br>在这个例子中，path选项值会与/blog,/blogrool等等相匹配；<br>任何以/blog开头的选项都是合法的。要注意的是只有在domain选项核实完毕之后才会对path属性进行比较。<br>path属性的默认值是发送Set-Cookie消息头所对应的URL中的path部分。</p><p>secure选项（The  secure  option）<br>最后一个选项是secure。不像其它选项，该选项只是一个标记并且没有其它的值。<br>一个secure cookie只有当请求是通过SSL和HTTPS创建时，才会发送到服务器端。<br>这种cookie的内容意指具有很高的价值并且可能潜在的被破解以纯文本形式传输。例如<br> secure<br>现实中，机密且敏感的信息绝不应该在cookies中存储或传输，因为cookies的整个机制都是原本不安全的。<br>默认情况下，在HTTPS链接上传输的cookies都会被自动添加上secure选项。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function setCookie(Name,value,days,domain,path,secure)&#123;</span><br><span class="line">  var exp = new Date();</span><br><span class="line">  exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000);//过期时间天</span><br><span class="line">  expires_time = exp.toGMTString();</span><br><span class="line">  document.cookie = Name +&quot;=&quot; + escape(value) + &quot;;expires=&quot; + expires_time;</span><br><span class="line">&#125;</span><br><span class="line">function getCookie(name)&#123;</span><br><span class="line">  let searchName = name+&quot;=&quot;; // username=</span><br><span class="line">  let c = document.cookie.indexOf(searchName);</span><br><span class="line">  if (c != -1)&#123;</span><br><span class="line">    console.log(&quot;已注册&quot;);</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    console.log(&quot;您还没注册&quot;);</span><br><span class="line">    setCookie(username,leepeng,7)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 删除cookie 设置过期时间</span><br><span class="line">function clearCookie(name) &#123;  </span><br><span class="line">  setCookie(name, &quot;&quot;, -1);  </span><br><span class="line">&#125; </span><br><span class="line">getCookie(&apos;username&apos;)</span><br></pre></td></tr></table></figure><h3 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h3><blockquote><p>localStorage 和 sessionStorage 属性允许在浏览器中存储 key/value 对的数据。用法相同<br>sessionStorage 用于临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据<br>如果你想在浏览器窗口关闭后还保留数据，可以使用 localStorage 属性， 改数据对象没有过期时间，今天、下周、明年都能用，除非你手动去删除。</p><p>window.sessionStorage</p><p>保存数据语法：<br>sessionStorage.setItem(“key”, “value”);<br>sessionStorage.setItem($(this).val(),JSON.stringify(obj)); //JSON.stringify()将对象转为json字符串存储</p><p>读取数据语法：<br>var lastname = sessionStorage.getItem(“key”);<br>JSON.parse(sessionStorage.getItem(key)); //JSON.parse()方法用于将一个 JSON 字符串转换为对象。</p><p>删除指定键的数据语法：<br>sessionStorage.removeItem(“key”);</p><p>删除所有数据：<br>sessionStorage.clear();</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -437,31 +461,6 @@
   </entry>
   
   <entry>
-    <title>老是忘记的小问题!</title>
-    <link href="http://blog.leepeng.top/2017/05/02/wangjidexiaowenti/"/>
-    <id>http://blog.leepeng.top/2017/05/02/wangjidexiaowenti/</id>
-    <published>2017-05-01T16:00:00.000Z</published>
-    <updated>2018-01-21T10:00:37.445Z</updated>
-    
-    <content type="html"><![CDATA[<p>1、火狐FF里INPUT标签刷新页面后 仍然保存之前输入的内容。</p><p>直接在input 标签里 增加 autocomplete=”off”。火狐默认为 on。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1、火狐FF里INPUT标签刷新页面后 仍然保存之前输入的内容。&lt;/p&gt;
-&lt;p&gt;直接在input 标签里 增加 autocomplete=”off”。火狐默认为 on。&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="html" scheme="http://blog.leepeng.top/tags/html/"/>
-    
-  </entry>
-  
-  <entry>
     <title>屏蔽双击选中文字的方法!</title>
     <link href="http://blog.leepeng.top/2017/05/02/pingbishuangjixuanzhongzi/"/>
     <id>http://blog.leepeng.top/2017/05/02/pingbishuangjixuanzhongzi/</id>
@@ -505,6 +504,31 @@
     
     
       <category term="js" scheme="http://blog.leepeng.top/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>老是忘记的小问题!</title>
+    <link href="http://blog.leepeng.top/2017/05/02/wangjidexiaowenti/"/>
+    <id>http://blog.leepeng.top/2017/05/02/wangjidexiaowenti/</id>
+    <published>2017-05-01T16:00:00.000Z</published>
+    <updated>2018-01-21T10:00:37.445Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、火狐FF里INPUT标签刷新页面后 仍然保存之前输入的内容。</p><p>直接在input 标签里 增加 autocomplete=”off”。火狐默认为 on。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、火狐FF里INPUT标签刷新页面后 仍然保存之前输入的内容。&lt;/p&gt;
+&lt;p&gt;直接在input 标签里 增加 autocomplete=”off”。火狐默认为 on。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="html" scheme="http://blog.leepeng.top/tags/html/"/>
     
   </entry>
   
